@@ -122,7 +122,7 @@ public class _10080ToKatalam extends QuestHandler {
 			if (player.getWorldId() == 600050000) {
 				int var = qs.getQuestVarById(0);
 				if (var == 2) {
-					playQuestMovie(env, 822);
+					playQuestMovie(env, 821);
 					changeQuestStep(env, 2, 3, false);
 					return true;
 				}

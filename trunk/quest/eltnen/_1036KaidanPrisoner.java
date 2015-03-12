@@ -160,6 +160,7 @@ public class _1036KaidanPrisoner extends QuestHandler {
 						}
 						qs.setQuestVarById(0, var + 1);
 						updateQuestStatus(env);
+						TeleportService2.teleportTo(player, 210020000, 1596.1948f, 1529.9152f, 317, (byte) 120, TeleportAnimation.BEAM_ANIMATION);
 						PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 						return true;
 					}

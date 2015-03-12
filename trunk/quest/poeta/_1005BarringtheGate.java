@@ -223,6 +223,6 @@ public class _1005BarringtheGate extends QuestHandler {
 				}
 				updateQuestStatus(env);
 			}
-		}, 3000);
+		}, 100);
 	}
 }

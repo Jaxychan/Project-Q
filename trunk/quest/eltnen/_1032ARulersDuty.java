@@ -167,6 +167,7 @@ public class _1032ARulersDuty extends QuestHandler {
 					return sendQuestDialog(env, 2034);
 				} else if (env.getDialog() == DialogAction.SETPRO4) {
 					removeQuestItem(env, 182201001, 1);
+					playQuestMovie(env, 49);
 					qs.setQuestVar(5);
 					updateQuestStatus(env);
 					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
