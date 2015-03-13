@@ -31,7 +31,7 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 /**
  * @author Rhys2002
  * @modified apozema
- * TODO: gunner should not be able to interact with 801223 NPC  
+ * TODO: gunner should not be able to interact with 801223 NPC
  */
 public class _2989CeremonyOfTheWise extends QuestHandler {
 

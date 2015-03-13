@@ -45,7 +45,7 @@ public class _20021TheAetherMustFlow extends QuestHandler {
 	public _20021TheAetherMustFlow() {
 		super(questId);
 	}
-	
+
 	@Override
 	public void register() {
 		qe.registerOnEnterZoneMissionEnd(questId);
@@ -102,7 +102,7 @@ public class _20021TheAetherMustFlow extends QuestHandler {
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 0) {
-						return sendQuestDialog(env, 1011);					
+						return sendQuestDialog(env, 1011);
 					}
 					case SETPRO1:
 						return defaultCloseDialog(env, 0, 1);
@@ -115,7 +115,7 @@ public class _20021TheAetherMustFlow extends QuestHandler {
 					if (var == 1) {
 						return sendQuestDialog(env, 1352);
 					}
-					case SETPRO2: 
+					case SETPRO2:
 						return defaultCloseDialog(env, 1, 2);
 					default:
 						break;
@@ -143,7 +143,7 @@ public class _20021TheAetherMustFlow extends QuestHandler {
 						return sendQuestDialog(env, 2716);
 					}
 				case SETPRO4:
-					return defaultCloseDialog(env, 3, 4); 
+					return defaultCloseDialog(env, 3, 4);
 				case SETPRO6:
 					if (player.isInGroup2()) {
 						return sendQuestDialog(env, 2717);
@@ -208,7 +208,7 @@ public class _20021TheAetherMustFlow extends QuestHandler {
 		if (qs == null || qs.getStatus() != QuestStatus.START) {
 			return false;
 		}
-		
+
 		int targetId = 0;
 		if (env.getVisibleObject() instanceof Npc) {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();

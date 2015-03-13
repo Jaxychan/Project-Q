@@ -44,7 +44,7 @@ public class _12850GinosRequest extends QuestHandler {
 		qe.registerOnEnterZone(ZoneName.get("BERITRAS_BANE_PROTECTORATE_600050000"), questId);
 		qe.registerOnKillInWorld(600050000, questId);
 	}
-	
+
 	@Override
 	public boolean onKillInWorldEvent(QuestEnv env) {
 		Player player = env.getPlayer();

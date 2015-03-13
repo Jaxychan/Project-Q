@@ -44,7 +44,7 @@ public class _12851HerminiaRequest extends QuestHandler {
 		qe.registerOnEnterZone(ZoneName.get("SILLUS_FORTRESS_PATHWAY_600050000"), questId);
 		qe.registerOnKillInWorld(600050000, questId);
 	}
-	
+
 	@Override
 	public boolean onKillInWorldEvent(QuestEnv env) {
 		Player player = env.getPlayer();

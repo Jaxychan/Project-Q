@@ -44,7 +44,7 @@ public class _22844WatchingtheWatch extends QuestHandler {
 		qe.registerOnEnterZone(ZoneName.get("WZ_WEATHERZONELDF5A_WEATHER2_600050000"), questId);
 		qe.registerOnKillInWorld(600050000, questId);
 	}
-	
+
 	@Override
 	public boolean onKillInWorldEvent(QuestEnv env) {
 		Player player = env.getPlayer();

@@ -32,7 +32,7 @@ public class _3208ThePuzzlingBlueprint extends QuestHandler {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see com.aionemu.gameserver.questEngine.handlers.QuestHandler#register()
 	 */
 	@Override

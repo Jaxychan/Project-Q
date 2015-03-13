@@ -51,7 +51,7 @@ public class _22527WhatitheBox extends QuestHandler {
 		int targetId = env.getTargetId();
 
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 0) { 
+			if (targetId == 0) {
 				if (dialog == DialogAction.QUEST_ACCEPT_1) {
 					QuestService.startQuest(env);
 					return closeDialogWindow(env);
@@ -59,7 +59,7 @@ public class _22527WhatitheBox extends QuestHandler {
 			}
 		}
 		else if (qs.getStatus() == QuestStatus.START) {
-			if (targetId == 801000) { 
+			if (targetId == 801000) {
 				if (dialog == DialogAction.QUEST_SELECT) {
 					return sendQuestDialog(env, 2375);
 				}
@@ -68,7 +68,7 @@ public class _22527WhatitheBox extends QuestHandler {
 					return defaultCloseDialog(env, 0, 1, true, true);
 				}
 			}
-		}	
+		}
 		else if (qs.getStatus() == QuestStatus.REWARD) {
 			if (targetId == 801000) {
 				switch (dialog) {
@@ -83,7 +83,7 @@ public class _22527WhatitheBox extends QuestHandler {
 		}
 		return false;
 	}
-	
+
 	@Override
 	public HandlerResult onItemUseEvent(QuestEnv env, Item item) {
 		Player player = env.getPlayer();

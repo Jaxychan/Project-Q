@@ -44,7 +44,7 @@ public class _12849FabianaRequest extends QuestHandler {
 		qe.registerOnEnterZone(ZoneName.get("TORN_LAND_600050000"), questId);
 		qe.registerOnKillInWorld(600050000, questId);
 	}
-	
+
 	@Override
 	public boolean onKillInWorldEvent(QuestEnv env) {
 		Player player = env.getPlayer();

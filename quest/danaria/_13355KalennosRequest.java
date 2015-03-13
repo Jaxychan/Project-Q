@@ -44,7 +44,7 @@ public class _13355KalennosRequest extends QuestHandler {
 		qe.registerOnEnterZone(ZoneName.get("DRAINED_BASIN_600060000"), questId);
 		qe.registerOnKillInWorld(600060000, questId);
 	}
-	
+
 	@Override
 	public boolean onKillInWorldEvent(QuestEnv env) {
 		Player player = env.getPlayer();

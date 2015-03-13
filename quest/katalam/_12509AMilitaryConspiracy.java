@@ -65,7 +65,7 @@ public class _12509AMilitaryConspiracy extends QuestHandler {
 			return HandlerResult.FAILED;
  		}
 		if (qs.getQuestVarById(0) != 1) {
-			return HandlerResult.FAILED;	
+			return HandlerResult.FAILED;
 		}
 		if (qs.getStatus() != QuestStatus.START) {
 			return HandlerResult.FAILED;

@@ -44,7 +44,7 @@ public class _23351TobaldRequest extends QuestHandler {
 		qe.registerOnEnterZone(ZoneName.get("SLEEPING_ELDERS_PLATEAU_600060000"), questId);
 		qe.registerOnKillInWorld(600060000, questId);
 	}
-	
+
 	@Override
 	public boolean onKillInWorldEvent(QuestEnv env) {
 		Player player = env.getPlayer();
@@ -76,7 +76,7 @@ public class _23351TobaldRequest extends QuestHandler {
 		}
 		return false;
 	}
-	
+
 	@Override
 	public boolean onEnterZoneEvent(QuestEnv env, ZoneName zoneName) {
 		if (zoneName == ZoneName.get("SLEEPING_ELDERS_PLATEAU_600060000")) {

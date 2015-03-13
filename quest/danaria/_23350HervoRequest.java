@@ -44,7 +44,7 @@ public class _23350HervoRequest extends QuestHandler {
 		qe.registerOnEnterZone(ZoneName.get("TAINTED_LANDS_600060000"), questId);
 		qe.registerOnKillInWorld(600060000, questId);
 	}
-	
+
 	@Override
 	public boolean onKillInWorldEvent(QuestEnv env) {
 		Player player = env.getPlayer();

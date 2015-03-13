@@ -43,7 +43,7 @@ public class _12524ManyBalaurDied extends QuestHandler {
 		}
 		qe.registerQuestNpc(801022).addOnTalkEvent(questId);
 	}
-	
+
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
 		return defaultOnLvlUpEvent(env);
@@ -69,7 +69,7 @@ public class _12524ManyBalaurDied extends QuestHandler {
 		}
 		return false;
 	}
-        
+
 	@Override
 	public boolean onKillEvent(QuestEnv env) {
 		Player player = env.getPlayer();

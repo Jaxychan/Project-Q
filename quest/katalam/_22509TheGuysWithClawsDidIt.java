@@ -32,18 +32,18 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 /**
  * @author Romanz
  */
-public class _22509TheGuysWithClawsDidIt extends QuestHandler 
+public class _22509TheGuysWithClawsDidIt extends QuestHandler
 {
 
 	private static final int questId = 22509;
 
-	public _22509TheGuysWithClawsDidIt() 
+	public _22509TheGuysWithClawsDidIt()
 	{
 		super(questId);
 	}
 
 	@Override
-	public void register() 
+	public void register()
 	{
 		qe.registerQuestNpc(800989).addOnQuestStart(questId);
 		qe.registerQuestNpc(800989).addOnTalkEvent(questId);
@@ -53,7 +53,7 @@ public class _22509TheGuysWithClawsDidIt extends QuestHandler
 	}
 
 	@Override
-	public boolean onKillEvent(QuestEnv env) 
+	public boolean onKillEvent(QuestEnv env)
 	{
 		return defaultOnKillEvent(env, 701743, 0, 1);
 	}
@@ -79,10 +79,10 @@ public class _22509TheGuysWithClawsDidIt extends QuestHandler
 
 		PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 3000, 0,
 			0), true);
-		ThreadPoolManager.getInstance().schedule(new Runnable() 
+		ThreadPoolManager.getInstance().schedule(new Runnable()
 		{
 			@Override
-			public void run() 
+			public void run()
 			{
 				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0,
 					1, 0), true);
@@ -102,12 +102,12 @@ public class _22509TheGuysWithClawsDidIt extends QuestHandler
 
 		if(qs == null || qs.getStatus() == QuestStatus.NONE)
 		{
-			if (targetId == 800989) 
+			if (targetId == 800989)
 			{
 				if (dialog == DialogAction.QUEST_SELECT)
                 {
 					return sendQuestDialog(env, 4762);}
-				else 
+				else
 					return sendQuestStartDialog(env, 182213338, 1);
 			}
 		}
@@ -121,7 +121,7 @@ public class _22509TheGuysWithClawsDidIt extends QuestHandler
 			{
 				if (dialog == DialogAction.USE_OBJECT)
 					return sendQuestDialog(env, 10002);
-				else 
+				else
 					return sendQuestEndDialog(env);
 			}
 		}
