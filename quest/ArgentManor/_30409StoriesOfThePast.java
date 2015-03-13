@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.argent_manor;
+package quest.ArgentManor;
 
 import com.aionemu.gameserver.model.DialogAction;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -24,15 +16,11 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 
-/**
- *
- * @author Ritsu
- */
-public class _30409StoriesofthePast extends QuestHandler {
+public class _30409StoriesOfThePast extends QuestHandler {
 
 	private static final int questId = 30409;
 
-	public _30409StoriesofthePast() {
+	public _30409StoriesOfThePast() {
 		super(questId);
 	}
 
@@ -51,7 +39,7 @@ public class _30409StoriesofthePast extends QuestHandler {
 		int targetId = env.getTargetId();
 
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 799539) {
+			if (targetId == 799539) { // Sesinerk
 				if (dialog == DialogAction.QUEST_SELECT) {
 					return sendQuestDialog(env, 1011);
 				} else {
@@ -61,7 +49,7 @@ public class _30409StoriesofthePast extends QuestHandler {
 		} else if (qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
 			switch (targetId) {
-				case 798116: {
+				case 798116: { // Daarunerk
 					switch (dialog) {
 						case QUEST_SELECT: {
 							if (var == 0) {
@@ -76,7 +64,7 @@ public class _30409StoriesofthePast extends QuestHandler {
 					}
 				}
 
-				case 799539:
+				case 799539: // Sesinerk
 					switch (dialog) {
 						case QUEST_SELECT: {
 							if (var == 1) {
@@ -93,7 +81,7 @@ public class _30409StoriesofthePast extends QuestHandler {
 					}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 799539) {
+			if (targetId == 799539) { // Sesinerk
 				return sendQuestEndDialog(env);
 			}
 		}

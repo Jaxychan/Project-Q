@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.argent_manor;
+package quest.ArgentManor;
 
 import com.aionemu.gameserver.model.DialogAction;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -25,23 +17,18 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
 
-/**
- *
- * @author Ritsu
- */
-public class _30459MasteroftheRing extends QuestHandler {
+public class _30410DreamsToReality extends QuestHandler {
 
-	private static final int questId = 30459;
+	private static final int questId = 30410;
 
-	public _30459MasteroftheRing() {
+	public _30410DreamsToReality() {
 		super(questId);
 	}
 
 	@Override
 	public void register() {
-		qe.registerQuestNpc(799546).addOnQuestStart(questId);
-		qe.registerQuestNpc(799546).addOnTalkEvent(questId);
-		qe.registerQuestNpc(204108).addOnTalkEvent(questId);
+		qe.registerQuestNpc(799539).addOnQuestStart(questId);
+		qe.registerQuestNpc(799539).addOnTalkEvent(questId);
 	}
 
 	@Override
@@ -52,9 +39,9 @@ public class _30459MasteroftheRing extends QuestHandler {
 		int targetId = env.getTargetId();
 
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 799546) {
+			if (targetId == 799539) { // Sesinerk
 				if (dialog == DialogAction.QUEST_SELECT) {
-					return sendQuestDialog(env, 1011);
+					return sendQuestDialog(env, 4762);
 				} else {
 					return sendQuestStartDialog(env);
 				}
@@ -62,21 +49,16 @@ public class _30459MasteroftheRing extends QuestHandler {
 		} else if (qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
 			switch (targetId) {
-				case 204108: {
+				case 799539: { // Sesinerk
 					switch (dialog) {
 						case QUEST_SELECT: {
 							if (var == 0) {
-								return sendQuestDialog(env, 1352);
-							} else if (var == 1) {
-								return sendQuestDialog(env, 2375);
+								return sendQuestDialog(env, 1011);
 							}
-						}
-						case SETPRO1: {
-							return defaultCloseDialog(env, 0, 1);
 						}
 						case CHECK_USER_HAS_QUEST_ITEM_SIMPLE: {
 							if (QuestService.collectItemCheck(env, true)) {
-								changeQuestStep(env, 1, 1, true);
+								changeQuestStep(env, 0, 0, true);
 								return sendQuestDialog(env, 5);
 							} else {
 								return closeDialogWindow(env);
@@ -88,7 +70,7 @@ public class _30459MasteroftheRing extends QuestHandler {
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 204108) {
+			if (targetId == 799539) { // Sesinerk
 				return sendQuestEndDialog(env);
 			}
 		}
