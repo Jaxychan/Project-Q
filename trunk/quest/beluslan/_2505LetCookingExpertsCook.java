@@ -99,7 +99,7 @@ public class _2505LetCookingExpertsCook extends QuestHandler {
 				case SETPRO1:
 					if (var == 0) {
 						removeQuestItem(env, 182204404, 1);
-						if (!giveQuestItem(env, 182204405, 1)) {							
+						if (!giveQuestItem(env, 182204405, 1)) {
 						}
 						updateQuestStatus(env);
 						PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));

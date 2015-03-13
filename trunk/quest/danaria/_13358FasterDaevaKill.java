@@ -44,7 +44,7 @@ public class _13358FasterDaevaKill extends QuestHandler {
 		qe.registerOnEnterZone(ZoneName.get("PRADETH_SUPPLY_ROAD_600060000"), questId);
 		qe.registerOnKillInWorld(600060000, questId);
 	}
-	
+
 	@Override
 	public boolean onKillInWorldEvent(QuestEnv env) {
 		Player player = env.getPlayer();

@@ -43,7 +43,7 @@ public class _22505ScoutingOutheGuardianDetachment extends QuestHandler {
 		}
 		qe.registerQuestNpc(801007).addOnTalkEvent(questId);
 	}
-	
+
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
 		return defaultOnLvlUpEvent(env);
@@ -69,7 +69,7 @@ public class _22505ScoutingOutheGuardianDetachment extends QuestHandler {
 		}
 		return false;
 	}
-        
+
 	@Override
 	public boolean onKillEvent(QuestEnv env) {
 		Player player = env.getPlayer();

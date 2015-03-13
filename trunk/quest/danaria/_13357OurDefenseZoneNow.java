@@ -44,7 +44,7 @@ public class _13357OurDefenseZoneNow extends QuestHandler {
 		qe.registerOnEnterZone(ZoneName.get("BERITRAN_DEFENSE_ZONE_600060000"), questId);
 		qe.registerOnKillInWorld(600060000, questId);
 	}
-	
+
 	@Override
 	public boolean onKillInWorldEvent(QuestEnv env) {
 		Player player = env.getPlayer();

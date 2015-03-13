@@ -44,7 +44,7 @@ public class _23354OlafRequest extends QuestHandler {
 		qe.registerOnEnterZone(ZoneName.get("SAURO_FOOT_PATH_600060000"), questId);
 		qe.registerOnKillInWorld(600060000, questId);
 	}
-	
+
 	@Override
 	public boolean onKillInWorldEvent(QuestEnv env) {
 		Player player = env.getPlayer();

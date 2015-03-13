@@ -43,7 +43,7 @@ public class _12505KnockingOnTheirDoor extends QuestHandler {
 		}
 		qe.registerQuestNpc(801026).addOnTalkEvent(questId);
 	}
-	
+
 	@Override
 	public boolean onLvlUpEvent(QuestEnv env) {
 		return defaultOnLvlUpEvent(env);
@@ -69,7 +69,7 @@ public class _12505KnockingOnTheirDoor extends QuestHandler {
 		}
 		return false;
 	}
-        
+
 	@Override
 	public boolean onKillEvent(QuestEnv env) {
 		Player player = env.getPlayer();

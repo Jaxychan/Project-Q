@@ -128,7 +128,7 @@ public class _1076FragmentofMemory2 extends QuestHandler {
 						WorldMapInstance newInstance = InstanceService.getNextAvailableInstance(310070000);
 						InstanceService.registerPlayerWithInstance(newInstance, player);
 						TeleportService2.teleportTo(player, 310070000, newInstance.getInstanceId(), 180, 253, 1374);
-						playQuestMovie(env, 170);						
+						playQuestMovie(env, 170);
 						return closeDialogWindow(env);
 					}
 				case SETPRO6:
@@ -166,7 +166,7 @@ public class _1076FragmentofMemory2 extends QuestHandler {
 		}
 		return false;
 	}
-	
+
 	@Override
 	public boolean onMovieEndEvent(QuestEnv env, int movieId) {
 		Player player = env.getPlayer();

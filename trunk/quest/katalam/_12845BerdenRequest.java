@@ -44,7 +44,7 @@ public class _12845BerdenRequest extends QuestHandler {
 		qe.registerOnEnterZone(ZoneName.get("SPIRALROOT_SHELTER_600050000"), questId);
 		qe.registerOnKillInWorld(600050000, questId);
 	}
-	
+
 	@Override
 	public boolean onKillInWorldEvent(QuestEnv env) {
 		Player player = env.getPlayer();

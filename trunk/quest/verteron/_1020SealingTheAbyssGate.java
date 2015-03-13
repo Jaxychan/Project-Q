@@ -72,7 +72,7 @@ public class _1020SealingTheAbyssGate extends QuestHandler {
 						TeleportService2.teleportTo(player, 210030000, 2683.2085f, 1068.8977f, 199.375f, (byte) 119, TeleportAnimation.BEAM_ANIMATION);
 						changeQuestStep(env, 0, 1, false);
 						return closeDialogWindow(env);
-					} else if (env.getDialogId() == DialogAction.SELECT_ACTION_1013.id()) {						
+					} else if (env.getDialogId() == DialogAction.SELECT_ACTION_1013.id()) {
 						playQuestMovie(env, 29);
 						return sendQuestDialog(env, 1013);
 					}

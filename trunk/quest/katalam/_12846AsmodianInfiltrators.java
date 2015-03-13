@@ -44,7 +44,7 @@ public class _12846AsmodianInfiltrators extends QuestHandler {
 		qe.registerOnEnterZone(ZoneName.get("BERITRAN_FOOTHOLD_600050000"), questId);
 		qe.registerOnKillInWorld(600050000, questId);
 	}
-	
+
 	@Override
 	public boolean onKillInWorldEvent(QuestEnv env) {
 		Player player = env.getPlayer();

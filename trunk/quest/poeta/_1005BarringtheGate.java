@@ -76,7 +76,7 @@ public class _1005BarringtheGate extends QuestHandler {
 							updateQuestStatus(env);
 							sendQuestSelectionDialog(env);
 							return true;
-						}						
+						}
 					default:
 						break;
 				}
