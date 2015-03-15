@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.ascension;
+package quest.Ascension;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,9 +39,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.WorldMapInstance;
 
-/**
- * @author MrPoke
- */
 public class _2008Ascension extends QuestHandler {
 
 	private final static int questId = 2008;
@@ -88,7 +77,7 @@ public class _2008Ascension extends QuestHandler {
 		int var = qs.getQuestVarById(0);
 		int targetId = env.getTargetId();
 		Npc npc = (Npc) env.getVisibleObject();
-		if (targetId == 205040) {
+		if (targetId == 205040) { // Guardian Assassin
 			NpcActions.delete(npc);
 			if (var >= 51 && var <= 53) {
 				qs.setQuestVar(qs.getQuestVars().getQuestVars() + 1);
@@ -101,7 +90,7 @@ public class _2008Ascension extends QuestHandler {
 				mob.getAggroList().addDamage(player, 1000);
 				return true;
 			}
-		} else if (targetId == 205041 && var == 5) {
+		} else if (targetId == 205041 && var == 5) { // Brigade General Hellion
 			playQuestMovie(env, 152);
 			for (Npc npcInside : player.getPosition().getWorldMapInstance().getNpcs()) {
 				NpcActions.delete(npcInside);
@@ -127,7 +116,7 @@ public class _2008Ascension extends QuestHandler {
 		int targetId = env.getTargetId();
 
 		if (qs.getStatus() == QuestStatus.START) {
-			if (targetId == 203550) {
+			if (targetId == 203550) { // Munin
 				switch (env.getDialog()) {
 					case QUEST_SELECT:
 						if (var == 0) {
@@ -155,7 +144,6 @@ public class _2008Ascension extends QuestHandler {
 							qs.setQuestVar(99);
 							updateQuestStatus(env);
 							PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 0));
-							// Create instance
 							WorldMapInstance newInstance = InstanceService.getNextAvailableInstance(320020000);
 							InstanceService.registerPlayerWithInstance(newInstance, player);
 							TeleportService2.teleportTo(player, 320020000, newInstance.getInstanceId(), 457.65f, 426.8f, 230.4f);
@@ -227,7 +215,7 @@ public class _2008Ascension extends QuestHandler {
 					default:
 						break;
 				}
-			} else if (targetId == 790003) {
+			} else if (targetId == 790003) { // Urd
 				switch (env.getDialog()) {
 					case QUEST_SELECT:
 						if (var == 1) {
@@ -248,7 +236,7 @@ public class _2008Ascension extends QuestHandler {
 					default:
 						break;
 				}
-			} else if (targetId == 790002) {
+			} else if (targetId == 790002) { // Verdandi
 				switch (env.getDialog()) {
 					case QUEST_SELECT:
 						if (var == 2) {
@@ -269,7 +257,7 @@ public class _2008Ascension extends QuestHandler {
 					default:
 						break;
 				}
-			} else if (targetId == 203546) {
+			} else if (targetId == 203546) { // Skuld
 				switch (env.getDialog()) {
 					case QUEST_SELECT:
 						if (var == 3) {
@@ -290,7 +278,7 @@ public class _2008Ascension extends QuestHandler {
 					default:
 						break;
 				}
-			} else if (targetId == 205020) {
+			} else if (targetId == 205020) { // Hagen
 				switch (env.getDialog()) {
 					case QUEST_SELECT:
 						if (var == 99) {
@@ -324,7 +312,7 @@ public class _2008Ascension extends QuestHandler {
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 203550) {
+			if (targetId == 203550) { // Munin
 				switch (env.getDialog()) {
 					case SELECTED_QUEST_NOREWARD:
 						if (player.getWorldId() == 320020000) {
@@ -355,8 +343,7 @@ public class _2008Ascension extends QuestHandler {
 				if (player.getWorldId() != 320020000) {
 					qs.setQuestVar(4);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(SystemMessageId.QUEST_FAILED_$1, DataManager.QUEST_DATA.getQuestById(questId)
-							.getName()));
+					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(SystemMessageId.QUEST_FAILED_$1, DataManager.QUEST_DATA.getQuestById(questId).getName()));
 				} else {
 					PacketSendUtility.sendPacket(player, new SM_ASCENSION_MORPH(1));
 					return true;
@@ -371,7 +358,7 @@ public class _2008Ascension extends QuestHandler {
 		if (player.getPlayerClass().isStartingClass()) {
 			ClassChangeService.setClass(player, playerClass);
 			player.getController().upgradePlayer();
-			changeQuestStep(env, 6, 6, true); // reward
+			changeQuestStep(env, 6, 6, true);
 			return sendQuestDialog(env, 5);
 		}
 		return false;
@@ -391,8 +378,7 @@ public class _2008Ascension extends QuestHandler {
 		if (var == 5 || (var == 6 && player.getPlayerClass().isStartingClass()) || (var >= 51 && var <= 53)) {
 			qs.setQuestVar(4);
 			updateQuestStatus(env);
-			PacketSendUtility
-					.sendPacket(player, new SM_SYSTEM_MESSAGE(SystemMessageId.QUEST_FAILED_$1, DataManager.QUEST_DATA.getQuestById(questId).getName()));
+			PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(SystemMessageId.QUEST_FAILED_$1, DataManager.QUEST_DATA.getQuestById(questId).getName()));
 		}
 		return false;
 	}

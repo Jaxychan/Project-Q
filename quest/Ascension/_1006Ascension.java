@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.ascension;
+package quest.Ascension;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,17 +42,6 @@ import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.WorldMapInstance;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
-/**
- * Talk with Pernos (790001). Go to the island at the center of Cliona Lake
- * (CLIONA_LAKE_210010000) and fill up the bottle Pernos gave you (182200007).
- * Meet Daminu (730008) and obtain Daminu's Essence (182200009). Talk with
- * Pernos. Explore your lost past (310020000, 52, 174, 229). Advance on
- * Karamatis (Belpartan, 205000). Defeat Raiders (211042) (4). Defeat Orissan
- * (211043). Talk with Pernos and choose the path you will take.
- *
- * @author MrPoke
- * @reworked vlog
- */
 public class _1006Ascension extends QuestHandler {
 
 	private final static int questId = 1006;
@@ -132,7 +113,7 @@ public class _1006Ascension extends QuestHandler {
 							WorldMapInstance newInstance = InstanceService.getNextAvailableInstance(310020000);
 							InstanceService.registerPlayerWithInstance(newInstance, player);
 							TeleportService2.teleportTo(player, 310020000, newInstance.getInstanceId(), 52, 174, 229, (byte) 10);
-							qs.setQuestVar(99); // 99
+							qs.setQuestVar(99);
 							updateQuestStatus(env);
 							removeQuestItem(env, 182200009, 1);
 							return closeDialogWindow(env);
@@ -222,7 +203,7 @@ public class _1006Ascension extends QuestHandler {
 								player.unsetState(CreatureState.ACTIVE);
 								player.setFlightTeleportId(1001);
 								PacketSendUtility.sendPacket(player, new SM_EMOTION(player, EmotionType.START_FLYTELEPORT, 1001, 0));
-								qs.setQuestVar(50); // 50
+								qs.setQuestVar(50);
 								updateQuestStatus(env);
 								final int instanceId = player.getInstanceId();
 								ThreadPoolManager.getInstance().schedule(new Runnable() {
@@ -231,14 +212,10 @@ public class _1006Ascension extends QuestHandler {
 										qs.setQuestVar(51);
 										updateQuestStatus(env);
 										List<Npc> mobs = new ArrayList<Npc>();
-										mobs.add((Npc) QuestService.spawnQuestNpc(310020000, instanceId, 211042, (float) 224.073, (float) 239.1, (float) 206.7,
-												(byte) 0));
-										mobs.add((Npc) QuestService.spawnQuestNpc(310020000, instanceId, 211042, (float) 233.5, (float) 241.04,
-												(float) 206.365, (byte) 0));
-										mobs.add((Npc) QuestService.spawnQuestNpc(310020000, instanceId, 211042, (float) 229.6, (float) 265.7, (float) 205.7,
-												(byte) 0));
-										mobs.add((Npc) QuestService.spawnQuestNpc(310020000, instanceId, 211042, (float) 222.8, (float) 262.5, (float) 205.7,
-												(byte) 0));
+										mobs.add((Npc) QuestService.spawnQuestNpc(310020000, instanceId, 211042, (float) 224.073, (float) 239.1, (float) 206.7, (byte) 0));
+										mobs.add((Npc) QuestService.spawnQuestNpc(310020000, instanceId, 211042, (float) 233.5, (float) 241.04, (float) 206.365, (byte) 0));
+										mobs.add((Npc) QuestService.spawnQuestNpc(310020000, instanceId, 211042, (float) 229.6, (float) 265.7, (float) 205.7, (byte) 0));
+										mobs.add((Npc) QuestService.spawnQuestNpc(310020000, instanceId, 211042, (float) 222.8, (float) 262.5, (float) 205.7, (byte) 0));
 										for (Npc mob : mobs) {
 											mob.getAggroList().addDamage(player, 1000);
 										}
@@ -277,11 +254,11 @@ public class _1006Ascension extends QuestHandler {
 			if (player.isInsideZone(ZoneName.get("LF1_ITEMUSEAREA_Q1006"))) {
 				int var = qs.getQuestVarById(0);
 				if (var == 1) {
-					return HandlerResult.fromBoolean(useQuestItem(env, item, 1, 2, false, 182200008, 1, 0)); // 2
+					return HandlerResult.fromBoolean(useQuestItem(env, item, 1, 2, false, 182200008, 1, 0));
 				}
 			}
 		}
-		return HandlerResult.SUCCESS; // ??
+		return HandlerResult.SUCCESS;
 	}
 
 	@Override
@@ -292,25 +269,24 @@ public class _1006Ascension extends QuestHandler {
 			Npc npc = (Npc) env.getVisibleObject();
 			int var = qs.getQuestVarById(0);
 			int targetId = env.getTargetId();
-			if (targetId == 211042) {
+			if (targetId == 211042) { // Raider
 				NpcActions.delete(npc);
 				if (var >= 51 && var < 54) {
-					return defaultOnKillEvent(env, 211042, 51, 54); // 52 - 54
+					return defaultOnKillEvent(env, 211042, 51, 54);
 				} else if (var == 54) {
-					qs.setQuestVar(4); // 4
+					qs.setQuestVar(4);
 					updateQuestStatus(env);
-					Npc mob = (Npc) QuestService
-							.spawnQuestNpc(310020000, player.getInstanceId(), 211043, (float) 226.7, (float) 251.5, (float) 205.5, (byte) 0);
+					Npc mob = (Npc) QuestService.spawnQuestNpc(310020000, player.getInstanceId(), 211043, (float) 226.7, (float) 251.5, (float) 205.5, (byte) 0);
 					mob.getAggroList().addDamage(player, 1000);
 					return true;
 				}
-			} else if (targetId == 211043 && var == 4) {
+			} else if (targetId == 211043 && var == 4) { // Orissan
 				playQuestMovie(env, 151);
 				for (Npc npcInside : player.getPosition().getWorldMapInstance().getNpcs()) {
 					NpcActions.delete(npcInside);
 				}
 				QuestService.addNewSpawn(310020000, player.getInstanceId(), 790001, (float) 220.6, (float) 247.8, (float) 206.0, (byte) 0);
-				qs.setQuestVar(5); // 5
+				qs.setQuestVar(5);
 				updateQuestStatus(env);
 			}
 		}
@@ -322,7 +298,7 @@ public class _1006Ascension extends QuestHandler {
 		if (player.getPlayerClass().isStartingClass()) {
 			ClassChangeService.setClass(player, playerClass);
 			player.getController().upgradePlayer();
-			changeQuestStep(env, 5, 5, true); // reward
+			changeQuestStep(env, 5, 5, true);
 			return sendQuestDialog(env, 5);
 		}
 		return false;
@@ -337,8 +313,7 @@ public class _1006Ascension extends QuestHandler {
 			if (var == 4 || (var == 5 && player.getPlayerClass().isStartingClass()) || (var >= 50 && var <= 55)) {
 				qs.setQuestVar(3);
 				updateQuestStatus(env);
-				PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(SystemMessageId.QUEST_FAILED_$1, DataManager.QUEST_DATA.getQuestById(questId)
-						.getName()));
+				PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(SystemMessageId.QUEST_FAILED_$1, DataManager.QUEST_DATA.getQuestById(questId).getName()));
 			}
 		}
 		return false;
@@ -354,8 +329,7 @@ public class _1006Ascension extends QuestHandler {
 				if (player.getWorldId() != 310020000) {
 					qs.setQuestVar(3);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(SystemMessageId.QUEST_FAILED_$1, DataManager.QUEST_DATA.getQuestById(questId)
-							.getName()));
+					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(SystemMessageId.QUEST_FAILED_$1, DataManager.QUEST_DATA.getQuestById(questId).getName()));
 				} else {
 					PacketSendUtility.sendPacket(player, new SM_ASCENSION_MORPH(1));
 					return true;
