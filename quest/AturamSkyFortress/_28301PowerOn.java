@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.aturam_sky_fortress;
+package quest.AturamSkyFortress;
 
 import java.util.Collections;
 
@@ -30,10 +22,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
 import com.aionemu.gameserver.services.item.ItemService;
 
-/**
- * @author zhkchi
- *
- */
 public class _28301PowerOn extends QuestHandler {
 
 	private final static int questId = 28301;
@@ -57,7 +45,7 @@ public class _28301PowerOn extends QuestHandler {
 		int targetId = env.getTargetId();
 
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 799530) {
+			if (targetId == 799530) { // Hariken
 				if (env.getDialog() == DialogAction.QUEST_SELECT) {
 					return sendQuestDialog(env, 4762);
 				} else if (env.getDialog() == DialogAction.QUEST_ACCEPT_1) {
@@ -76,7 +64,7 @@ public class _28301PowerOn extends QuestHandler {
 		int var = qs.getQuestVarById(0);
 
 		if (qs.getStatus() == QuestStatus.START) {
-			if (targetId == 730373 && var < 7) {
+			if (targetId == 730373 && var < 7) { // Balaur Spy Crystal
 				switch (env.getDialog()) {
 					case USE_OBJECT:
 						return sendQuestDialog(env, 1011);
@@ -93,7 +81,7 @@ public class _28301PowerOn extends QuestHandler {
 					default:
 						return sendQuestEndDialog(env);
 				}
-			} else if (targetId == 730374 && var == 7) {
+			} else if (targetId == 730374 && var == 7) { // H Core
 				switch (env.getDialog()) {
 					case USE_OBJECT:
 						return sendQuestDialog(env, 1352);
@@ -107,7 +95,7 @@ public class _28301PowerOn extends QuestHandler {
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 799530) {
+			if (targetId == 799530) { // Hariken
 				switch (env.getDialog()) {
 					case USE_OBJECT:
 						return sendQuestDialog(env, 10002);
