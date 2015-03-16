@@ -23,17 +23,14 @@
                     2507 [XML] Nerita's Encouragement
                     2508 [XML] Shugo Grass
                     2509 [XML] Gigrite's Drakie Problem
-                    2510 [UNUSED] Vanished Quest
                     2511 [XML] Ambitions for Success
                     2512 [SCRIPT] Food for Remote Places
                     2513 [SCRIPT] The Strange Cottage
                     2514 [SCRIPT] The Red Mane Report
                     2515 [SCRIPT] Leanor's Errand
-                    2516 [XML] Beluslan Pest Hunt
-                    2517 [UNUSED] Warrior/Scout
-                    2518 [UNUSED] Mage/Priest
-                    2519 [XML] Cadoc's Exchange
-                    2520 [XML] Cadoc's Trade
+                    2516 [XML] [Cash] To a Comfortable Life in the Stronghold
+                    2519 [XML] [Manastone] Cadoc's Exchange
+                    2520 [XML] [Manastone] Cadoc's Trade
                     2521 [XML] Gigrite's Secret
                     2522 [XML] Decreasing Drakies
                     2523 [SCRIPT] Grass for the Grave Robbers
@@ -49,8 +46,7 @@
                     2533 [SCRIPT] Beritra's Curse
                     2534 [XML] A Fortunate Medicine
                     2535 [XML] Some of My Best Friends
-                    2536 [UNUSED] Offering Business to Grave Robbers
-                    2537 [XML] Freki's Request
+                    2537 [XML] [Group] Freki's Request
                     2538 [SCRIPT] Curse of the Were-Ribbit
                     2539 [SCRIPT] Tryst of the Shadow
                     2540 [XML] Granker for Gark
@@ -62,18 +58,18 @@
                     2546 [XML] A Gift in Return
                     2547 [XML] Barosunerk's New Business
                     2548 [XML] Repaying the Debt
-                    2549 [XML] A Gift For Amma
+                    2549 [XML] A Gift For Amma 
                     2550 [XML] Revenge of the Displaced
                     2551 [XML] Mist Valley Temple
                     2552 [XML] Lepharist Miners
                     2553 [SCRIPT] The Brigade General's Call
                     2554 [XML] Malek Nuggets
-                    2555 [XML] Supervisor Yotunmork
+                    2555 [XML] [Group] Supervisor Yotunmork
                     2556 [XML] Finding Stua
-                    2557 [XML] An Expensive Spellbook
-                    2558 [XML] Stua's Reinforcements
-                    2559 [XML] Malek Transport Plan
-                    2560 [XML] Combat Miners
+                    2557 [XML] [Group] An Expensive Spellbook
+                    2558 [XML] [Group] Stua's Reinforcements
+                    2559 [XML] [Group] Malek Transport Plan
+                    2560 [XML] [Cash] Operation Weaken the Miners' Camp
                     2561 [XML] Frozen Ghosts
                     2562 [XML] Furs For Warmth
                     2563 [XML] The Frozen Orb
@@ -97,23 +93,19 @@
                     2581 [XML] Brilliant Kernel of the Night
                     2582 [XML] Safe Harbor
                     2583 [SCRIPT] A Polite Request
-                    2584 [UNUSED] The Starturtle and the Sprigg
                     2585 [XML] Priceless Coral
-                    2586 [XML] Dangerous Sea Creature
-                    2587 [XML] Rubelik's Request
-                    2588 [XML] The Elixir of Life
-                    2589 [XML] Ghosts of Anair Harbor
-                    2590 [UNUSED] Safety of the Village
-                    2591 [UNUSED] Gold (Warrior/Scout 41)
-                    2592 [UNUSED] Gold (Mage/Priest 41)
+                    2586 [XML] [Group] Dangerous Sea Creature
+                    2587 [XML] [Group] Rubelik's Request
+                    2588 [XML] [Group] The Elixir of Life
+                    2589 [XML] [Cash] The Ghost of Anair Harbour
                     2593 [XML] Wandering Souls
                     2594 [XML] A Procession of the Dead
                     2595 [XML] Crisis of Reyrinirerk
-                    2596 [XML] Power Shard Materials
-                    2597 [XML] Carapaces for Armor
+                    2596 [XML] [Group] Power Shard Materials
+                    2597 [XML] [Group] Carapaces for Armour
                     2599 [XML] A Preventive Measure
                     2600 [SCRIPT] Humongous Malek
-                    2601 [XML] Pollution in the Palace
+                    2601 [XML] [Group] Pollution in the Palace
                     2602 [XML] Blue Pearls
                     2605 [XML] The House on the Cliff
                     2606 [XML] A Ribbit in Need
@@ -139,14 +131,12 @@
                     2628 [XML] Restive Spirits
                     2629 [XML] Once a Friend, Now an Enemy
                     2630 [SCRIPT] The Dutiful Spy
-                    2631 [XML] Jaadis's Bioweapon
-                    2632 [XML] Get 'Em Young
-                    2633 [SCRIPT] Destroying Balaur Weapons
-                    2634 [SCRIPT] The Draupnir Redemption
-                    2635 [XML] Bakarma Barracks
-                    2636 [UNUSED] Gold (Warrior/Scout 46)
-                    2637 [UNUSED] Gold (Mage/Priest 46)
-                    2638 [XML] Hoarfrost's Hunt
+                    2631 [XML] [Instance/Group] Judishtira's Weapon
+                    2632 [XML] [Instance/Group] Corrupted Offspring
+                    2633 [SCRIPT] [Instance/Group] Destroying the Balaur Weapons
+                    2634 [SCRIPT] [Instance/Group] The Draupnir Rescue
+                    2635 [XML] [Cash/Group] Garrison of the Bakarma Legion
+                    2638 [XML] Hoarfrost's Hunt XXXXXXXX
                     2639 [XML] Divided They Fall
                     2640 [XML] I'm a Skurv Get Me Out of Here!
                     2641 [SCRIPT] Powwow With the Mau
