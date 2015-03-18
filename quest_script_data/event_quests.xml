@@ -49,6 +49,7 @@
                     80000 [SCRIPT] [Event] Joyful Daeva's Day
                     80001 [SCRIPT] [Event] Festive Daeva's Day
 80005 [XML] [Event] Heart Headband Pursuit
+80007 [XML] [Event] Heart Headband Chase
                     80008 [SCRIPT] [Event] Piece of Cake!
                     80009 [SCRIPT] [Event] The Cake is the Truth!
                     80010 [TODO] [Event] The Shulack Sugarcrooks
@@ -80,6 +81,8 @@
                     80075 [XML] [Event] Kinah Galore
 80142 [XML] [Event] Lost in Altgard
 80143 [TODO] [Event] Warped Rift Blocking
+80146 [XML] [Event] Alone in Beluslan
+80147 [TODO] [Event] Warped Rift Closing
                     80172 [XML] [Event] Father's Letter
                     80173 [XML] [Event] Ressurection of the Guard
                     80174 [XML] [Event] Elimination of the Crazed Beast
@@ -289,10 +292,12 @@
     <item_collecting start_npc_ids="798301" id="51029"/>
     <item_collecting start_npc_ids="831092" id="51030"/>
     <item_collecting start_npc_ids="799789" id="80005"/>
+    <item_collecting start_npc_ids="799791" id="80007"/>
     <item_collecting start_npc_ids="205474" id="80059"/>
     <item_collecting start_npc_ids="205481" id="80074"/>
     <item_collecting start_npc_ids="205481" id="80075"/>
     <item_collecting start_npc_ids="830244" id="80142"/>
+    <item_collecting start_npc_ids="830244" id="80146"/>
     <item_collecting start_npc_ids="799763" id="80172"/>
     <item_collecting start_npc_ids="799763" id="80173"/>
     <item_collecting start_npc_ids="799763" id="80174"/>

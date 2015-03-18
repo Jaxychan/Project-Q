@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.beluslan;
+package quest.Beluslan;
 
 import com.aionemu.gameserver.model.DialogAction;
 import com.aionemu.gameserver.model.gameobjects.Item;
@@ -32,15 +24,12 @@ import com.aionemu.gameserver.services.QuestService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 
-/**
- * @author Rhys2002
- */
-public class _2054LightuptheLighthouse extends QuestHandler {
+public class _2054LightUpTheLighthouse extends QuestHandler {
 
 	private final static int questId = 2054;
 	private final static int[] npc_ids = { 204768, 204739, 730109, 730140, 700287 };
 
-	public _2054LightuptheLighthouse() {
+	public _2054LightUpTheLighthouse() {
 		super(questId);
 	}
 
@@ -81,7 +70,7 @@ public class _2054LightuptheLighthouse extends QuestHandler {
 		}
 
 		if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 204768) {
+			if (targetId == 204768) { // Sleipnir
 				if (env.getDialog() == DialogAction.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);
 				} else if (env.getDialogId() == DialogAction.SELECT_QUEST_REWARD.id()) {
@@ -94,7 +83,7 @@ public class _2054LightuptheLighthouse extends QuestHandler {
 		} else if (qs.getStatus() != QuestStatus.START) {
 			return false;
 		}
-		if (targetId == 204768) {
+		if (targetId == 204768) { // Sleipnir
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 0) {
@@ -110,7 +99,7 @@ public class _2054LightuptheLighthouse extends QuestHandler {
 				default:
 					break;
 			}
-		} else if (targetId == 204739) {
+		} else if (targetId == 204739) { // Baugi
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 1) {
@@ -129,7 +118,7 @@ public class _2054LightuptheLighthouse extends QuestHandler {
 				default:
 					break;
 			}
-		} else if (targetId == 730109) {
+		} else if (targetId == 730109) { // Pirate's Treasure Box
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 3) {
@@ -146,7 +135,7 @@ public class _2054LightuptheLighthouse extends QuestHandler {
 				default:
 					break;
 			}
-		} else if (targetId == 730140) {
+		} else if (targetId == 730140) { // 730140
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 3) {
@@ -167,11 +156,9 @@ public class _2054LightuptheLighthouse extends QuestHandler {
 				default:
 					break;
 			}
-		} else if (targetId == 700287 && qs.getStatus() == QuestStatus.START) {
+		} else if (targetId == 700287 && qs.getStatus() == QuestStatus.START) { // Lighthouse Light Source
 			if (env.getDialog() == DialogAction.USE_OBJECT) {
-				return useQuestObject(env, 4, 4, true, 0, 0, 0, 182204309, 1, 238, false); // movie
-																							// +
-																							// reward
+				return useQuestObject(env, 4, 4, true, 0, 0, 0, 182204309, 1, 238, false);
 			}
 		}
 		return false;

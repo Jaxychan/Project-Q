@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.beluslan;
+package quest.Beluslan;
 
 import com.aionemu.gameserver.model.DialogAction;
 import com.aionemu.gameserver.model.gameobjects.Npc;
@@ -26,10 +18,6 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
 
-/**
- * @author Rhys2002
- * @modified & reworked Gigi
- */
 public class _2051SavingBeluslanFortress extends QuestHandler {
 
 	private final static int questId = 2051;
@@ -74,7 +62,7 @@ public class _2051SavingBeluslanFortress extends QuestHandler {
 		}
 
 		if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 204702) {
+			if (targetId == 204702) { // Nerita
 				if (env.getDialog() == DialogAction.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);
 				} else if (env.getDialogId() == DialogAction.SELECT_QUEST_REWARD.id()) {
@@ -87,7 +75,7 @@ public class _2051SavingBeluslanFortress extends QuestHandler {
 		} else if (qs.getStatus() != QuestStatus.START) {
 			return false;
 		}
-		if (targetId == 204702) {
+		if (targetId == 204702) { // Nerita
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 0) {
@@ -98,7 +86,7 @@ public class _2051SavingBeluslanFortress extends QuestHandler {
 				default:
 					break;
 			}
-		} else if (targetId == 204733) {
+		} else if (targetId == 204733) { // Bestla
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 1) {
@@ -117,7 +105,7 @@ public class _2051SavingBeluslanFortress extends QuestHandler {
 				default:
 					break;
 			}
-		} else if (targetId == 204206) {
+		} else if (targetId == 204206) { // Cavalorn
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 3) {
@@ -128,7 +116,7 @@ public class _2051SavingBeluslanFortress extends QuestHandler {
 				default:
 					break;
 			}
-		} else if (targetId == 278040) {
+		} else if (targetId == 278040) { // Haug
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 4) {
@@ -152,16 +140,16 @@ public class _2051SavingBeluslanFortress extends QuestHandler {
 				default:
 					break;
 			}
-		} else if (targetId == 700285) {
+		} else if (targetId == 700285) { // Rift Artefact
 			switch (env.getDialog()) {
 				case USE_OBJECT:
 					if (var == 7) {
-						return useQuestObject(env, 7, 7, true, 0, 0, 0, 182204302, 1, 0, false); // reward
+						return useQuestObject(env, 7, 7, true, 0, 0, 0, 182204302, 1, 0, false);
 					}
 				default:
 					break;
 			}
-		} else if (targetId == 700284) {
+		} else if (targetId == 700284) { // Temporal Transfer Stone
 			switch (env.getDialog()) {
 				case USE_OBJECT:
 					if (var == 11) {

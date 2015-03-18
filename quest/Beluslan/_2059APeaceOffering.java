@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.beluslan;
+package quest.Beluslan;
 
 import com.aionemu.gameserver.ai2.event.AIEventType;
 import com.aionemu.gameserver.model.DialogAction;
@@ -31,9 +23,6 @@ import com.aionemu.gameserver.questEngine.task.QuestTasks;
 import com.aionemu.gameserver.services.QuestService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-/**
- * @author Hellboy aion4Free
- */
 public class _2059APeaceOffering extends QuestHandler {
 
 	private final static int questId = 2059;
@@ -104,7 +93,7 @@ public class _2059APeaceOffering extends QuestHandler {
 		}
 
 		if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 204702) {
+			if (targetId == 204702) { // Nerita
 				if (env.getDialog() == DialogAction.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);
 				} else {
@@ -115,7 +104,7 @@ public class _2059APeaceOffering extends QuestHandler {
 		} else if (qs.getStatus() != QuestStatus.START) {
 			return false;
 		}
-		if (targetId == 204787) {
+		if (targetId == 204787) { // Chieftain Akagitan
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 0) {
@@ -143,7 +132,7 @@ public class _2059APeaceOffering extends QuestHandler {
 				default:
 					break;
 			}
-		} else if (targetId == 204795) {
+		} else if (targetId == 204795) { // Hasyaditan
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 1) {
@@ -159,7 +148,7 @@ public class _2059APeaceOffering extends QuestHandler {
 				default:
 					break;
 			}
-		} else if (targetId == 204796) {
+		} else if (targetId == 204796) { // Arita
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 2) {
@@ -170,8 +159,7 @@ public class _2059APeaceOffering extends QuestHandler {
 						qs.setQuestVarById(0, var + 1);
 						updateQuestStatus(env);
 						PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
-						Npc survivor = (Npc) QuestService.spawnQuestNpc(player.getWorldId(), player.getInstanceId(), 204806, player.getX(), player.getY(),
-								player.getZ(), (byte) 0);
+						Npc survivor = (Npc) QuestService.spawnQuestNpc(player.getWorldId(), player.getInstanceId(), 204806, player.getX(), player.getY(),player.getZ(), (byte) 0);
 						survivor.getAi2().onCreatureEvent(AIEventType.FOLLOW_ME, player);
 						player.getController().addTask(TaskId.QUEST_FOLLOW, QuestTasks.newFollowingToTargetCheckTask(env, survivor, 204813));
 						return true;

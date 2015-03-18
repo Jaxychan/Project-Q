@@ -136,9 +136,9 @@
                     2633 [SCRIPT] [Instance/Group] Destroying the Balaur Weapons
                     2634 [SCRIPT] [Instance/Group] The Draupnir Rescue
                     2635 [XML] [Cash/Group] Garrison of the Bakarma Legion
-                    2638 [XML] Hoarfrost's Hunt XXXXXXXX
+                    2638 [XML] Hoarfrost's Hunt
                     2639 [XML] Divided They Fall
-                    2640 [XML] I'm a Skurv Get Me Out of Here!
+                    2640 [XML] I'm a Skurv--Get Me Out of Here!
                     2641 [SCRIPT] Powwow With the Mau
                     2642 [XML] Supplies for the Survivors
                     2643 [XML] Mau's Lament
@@ -146,64 +146,62 @@
                     2645 [XML] Hoarfrost Tribe's Symbol
                     2646 [SCRIPT] The Inscrutable Stranger
                     2647 [XML] Belated Regret
-                    2648 [XML] Drakes and Their Breeders
+                    2648 [XML] Drakes and their Breeders
                     2649 [XML] Recovering the Keepsakes
                     2650 [XML] Balaur Assassin
-                    2651 [SCRIPT] A Friend's Whereabouts
-                    2652 [XML] Medicine for Nesteto
-                    2653 [SCRIPT] Finding Bollvig
-                    2654 [SCRIPT] The Last Persuasion
-                    2655 [XML] Reaper Squad Squish
-                    2656 [XML] Letter to a Friend
-                    2657 [XML] Materials for All Magic Wards
-                    2658 [XML] No Reinforcements
-                    2659 [XML] Clear the Way
-                    2660 [XML] Open the Path
+                    2651 [SCRIPT] [Spy] A Friend's Whereabouts
+                    2652 [XML] [Spy] Medicine for Nesteto
+                    2653 [SCRIPT] [Spy] Finding Bollvig
+                    2654 [SCRIPT] [Spy] The Last Persuasion
+                    2655 [XML] [Spy] Reaper Squad Squish
+                    2656 [XML] [Spy] Letter to a Friend
+                    2657 [XML] [Instance/Group] The End of the Ice Age
+                    2658 [XML] [Spy/Group] No Reinforcements
+                    2659 [XML] [Spy/Group] Clear the Way
+                    2660 [XML] [Spy/Group] Open the Path
                     2661 [XML] An Unobtrusive Journey
-                    2662 [XML] Dead Men Tell No Tales
+                    2662 [XML] [Group] Dead Men Tell No Tales
                     2663 [SCRIPT] Acquiring an Antidote
                     2664 [SCRIPT] An Antidote to the Lepharists
-                    2665 [XML] Closing the Gate
-                    2666 [UNUSED] Replacing Orders
+                    2665 [XML] [Group] Closing the Gate
                     2667 [XML] Strahein's Letter
-                    2668 [XML] Saving Atla
-                    2669 [SCRIPT] Atla's Escape
+                    2668 [XML] [Group] Saving Atla
+                    2669 [SCRIPT] [Group] Atla's Escape
                     2670 [SCRIPT] The Ancient Book
-                    2671 [XML] Decimating Bakarma Legion
-                    2672 [UNUSED] A Careful Eggs-amination
-                    2673 [XML] Getting Through Indratu
-                    2674 [XML] Dangerous Drake
-                    2675 [XML] Balaur Weapons
-                    2676 [XML] Loud Nagas and Nagarants
-                    2677 [XML] Making a Small Flame Ward
-                    2678 [XML] Making a Huge Flame Ward
-                    2679 [XML] Making a Blue Flame Ward
-                    2680 [XML] Amma's Birthstone
-                    2681 [XML] Cure for Stomach Pain
-                    2682 [XML] Comfort Food
-                    2683 [XML] Wishing on the Moon
-                    2684 [XML] Zeller Soup
-                    2685 [XML] Drinking for Two
-                    2686 [XML] Carpe Carpen
-                    2687 [XML] Craving for Almeha
-                    2688 [XML] Divine Asvata Log
-                    2689 [XML] Fruit of Solace
-                    2690 [XML] Reliable Report
-                    2691 [XML] A Spy's Advice
+                    2671 [XML] [Group] Decimating Bakarma Legion
+                    2673 [XML] [Spy/Group] Getting Through Indratu
+                    2674 [XML] [Group] Dangerous Drake
+                    2675 [XML] [Group] Balaur Weapons
+                    2676 [XML] [Group] Loud Nagas and Nagarants
+                    2677 [XML] [Instance/Group] Kindling the Flames
+                    2678 [XML] [Instance/Group] Stoking the Flames
+                    2679 [XML] [Instance/Group] Fanning the Flames
+                    2680 [XML] [Gathering] Amma's birthstone
+                    2681 [XML] [Gathering] Vegetables for stomach pains
+                    2682 [XML] [Gathering] Wholesome food
+                    2683 [XML] [Gathering] Wish-fulfilling jewel
+                    2684 [XML] [Gathering] Zeller soup
+                    2685 [XML] [Gathering] Drink for two
+                    2686 [XML] [Gathering] Fish is healthy
+                    2687 [XML] [Gathering] Appetite for Almeha
+                    2688 [XML] [Gathering] Divine Asvata Tree
+                    2689 [XML] [Gathering] Comforting fruit
+                    2690 [XML] [Spy] Reliable Report
+                    2691 [XML] [Spy] A Spy's Advice
                     2692 [SCRIPT] Broken Music Box
-                    2693 [SCRIPT] Krall Gone Mad
-                    2694 [XML] Looking for Strange Aether
+                    2693 [SCRIPT] [Spy/Group] Krall Gone Mad
+                    2694 [XML] [Group] Looking for Strange Aether
                     2695 [XML] Atla Rescue Report
-                    2696 [XML] The Enemy of My Enemy
-                    2697 [XML] Contacting Strahein
-                    2698 [XML] Reviving Strahein
-                    2699 [XML] A Mysterious Book
+                    2696 [XML] [Spy/Group] The Enemy of My Enemy
+                    2697 [XML] [Group] Contacting Strahein
+                    2698 [XML] [Group] Reviving Strahein
+                    2699 [XML] [Group] A Mysterious Book
                     4200 [SCRIPT] A Suspicious Call
                     4221 [XML] The Shugo from Pandaemonium
-                    4500 [XML] For the Good of All
+                    4500 [XML] [Spy/Group] For the Good of All
                     4501 [SCRIPT] Delayed Order
-                    4502 [SCRIPT] Essence of Fate
-                    4503 [XML] The Road to Dark Poeta
+                    4502 [SCRIPT] [Group] Essence of Fate
+                    4503 [XML] [Group] The Road to Dark Poeta
                     4504 [XML] More Priceless Coral
                     4505 [XML] Blue Pearl Dress
                     4506 [XML] Continuing the Hunt
@@ -223,12 +221,12 @@
                     4520 [XML] Halting the Blizzards
                     4521 [XML] International News
                     4522 [XML] Gotta Keep Warm!
-                    4523 [XML] Trials By Fire
-                    4524 [XML] Foolish Recklessness
-                    4525 [XML] Drakan Gone Qooqoo
-                    4526 [XML] Menacing Traitor
-                    4527 [XML] To the Island of Eternity
-                    4528 [XML] It's Alive! Undead?
+                    4523 [XML] [Coin/Group] Trials By Fire
+                    4524 [XML] [Coin/Group] Foolish Recklessness
+                    4525 [XML] [Coin/Group] Drakan Gone Qooqoo
+                    4526 [XML] [Coin/Group] Menacing Traitor
+                    4527 [XML] [Spy/Alliance] To the Island of Eternity
+                    4528 [XML] [Coin/Group] It's Alive! Undead?
                     4529 [XML] A Sick Shugo
                     4530 [XML] Unlikely Sources
                     4531 [XML] Between a Shugo and his Kinah
@@ -240,26 +238,22 @@
                     4537 [XML] The Purge
                     4538 [XML] The Letter
                     4539 [XML] The Trade Route
-                    4540 [XML] Beluslan Blues
-                    4541 [XML] Imports & Exports
-                    16909 [TODO] [Spy] A Mark of Distinction
-                    26902 [XML] [Spy] An Eye on the Research
-                    26903 [XML] [Spy] Bottling Kishar Krall
-                    26907 [XML] Malek-nant Growth
-                    26908 [XML] Blast it, Neritra, I'm a Researcher
-                    26909 [TODO] Tribal Emblems
+                    4540 [XML] [Manastone Bundle] Beluslan Blues
+                    4541 [XML] [Manastone Bundle] Imports & Exports
+                    16909 [TODO] [Spy] Insignia of the Hoarfrost Mau
+                    26902 [XML] [Spy] Base Expansion: Lepharist Research Centre
+                    26903 [XML] [Spy] Base Expansion: Kishar Village
+                    26907 [XML] Eliminate the attackers of the Malek Pass
+                    26908 [XML] Protect the Hoarfrost Outpost
+                    26909 [TODO] Insignia of the Hoarfrost Tribe
                     28600 [SCRIPT] Suspicious Errand
                     28601 [SCRIPT] Nightmares and Dreamscapes
-                    28602 [SCRIPT] Into the Unknown
-                    28605 [XML] Seeking Slumber
-                    28606 [XML] An Honorable Death
-                    28607 [XML] A Blacksmith's Dream
-                    28617 [XML] Confirmation in Dreams
-                    49021 [XML] [Daily] Nerita's Order
-                    80007 [XML] [Event] Heart Headband Chase
-                    80146 [XML] [Event] Alone in Beluslan
-                    80147 [TODO] [Event] Warped Rift Closing
-                    80264 [TODO] [Event] Delicious Birthday Banquet
+                    28602 [SCRIPT] [Instance] Journey into the Unknown
+                    28605 [XML] [Instance] Restless Sleep
+                    28606 [XML] [Instance] An Honourable Death
+                    28607 [XML] [Instance] A Smith's Dream
+                    28617 [XML] [Instance/Cash] Kaliga's End
+                    49021 [XML] [Daily] Nerita's Command
             [END] SUMMARY
     -->
     <!-- REPORTING QUESTS -->
@@ -381,8 +375,6 @@
     <item_collecting id="4540" start_npc_ids="204778"/>
     <item_collecting id="4541" start_npc_ids="204778"/>
     <item_collecting id="28607" start_npc_ids="205237"/>
-    <item_collecting id="80007" start_npc_ids="799791"/>
-    <item_collecting id="80146" start_npc_ids="830244"/>
     <!-- HUNTING QUESTS -->
     <monster_hunt id="2506" start_npc_ids="204702">
         <monster var="0" npc_ids="213017 213018" end_var="10"/>

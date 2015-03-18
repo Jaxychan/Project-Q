@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.beluslan;
+package quest.Beluslan;
 
 import com.aionemu.gameserver.model.DialogAction;
 import com.aionemu.gameserver.model.gameobjects.Npc;
@@ -25,16 +17,6 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 
-/**
- * Quest Starter: Hresvelgr (204837). Go to Dark Poeta and find the Balaur
- * Operation Order (730192). Destroy the Telepathy Controller (214894) (1).
- * Destroy power generators to close the Balaur Abyss Gate: Main Power Generator
- * (214895) (1), Auxiliary Power Generator (214896) (1), Emergency Generator
- * (214897) (1). Get rid of Brigade General Anuhart (214904), and take the
- * Concentrated Vitality (182204534) to Heimdall (204182).
- *
- * @author vlog
- */
 public class _4502EssenceOfFate extends QuestHandler {
 
 	private final static int questId = 4502;
@@ -80,7 +62,7 @@ public class _4502EssenceOfFate extends QuestHandler {
 						if (dialog == DialogAction.USE_OBJECT) {
 							return sendQuestDialog(env, 1011);
 						} else {
-							changeQuestStep(env, 0, 1, false); // 1
+							changeQuestStep(env, 0, 1, false);
 							return sendQuestDialog(env, 0);
 						}
 					}
@@ -94,7 +76,7 @@ public class _4502EssenceOfFate extends QuestHandler {
 							}
 						}
 						case CHECK_USER_HAS_QUEST_ITEM: {
-							return checkQuestItems(env, 2, 2, true, 5, 10001); // reward
+							return checkQuestItems(env, 2, 2, true, 5, 10001);
 						}
 						case FINISH_DIALOG: {
 							return sendQuestSelectionDialog(env);
@@ -105,7 +87,7 @@ public class _4502EssenceOfFate extends QuestHandler {
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 204182) {
+			if (targetId == 204182) { // Heimdall
 				return sendQuestEndDialog(env);
 			}
 		}
@@ -127,27 +109,27 @@ public class _4502EssenceOfFate extends QuestHandler {
 			switch (targetId) {
 				case 214894: { // Telepathy Controller
 					if (var == 1) {
-						return defaultOnKillEvent(env, 214894, 1, 2, 0); // 2
+						return defaultOnKillEvent(env, 214894, 1, 2, 0);
 					}
 					break;
 				}
 				case 214895: { // Main Power Generator
 					if (var == 2 && var1 != 1) {
-						defaultOnKillEvent(env, 214895, 0, 1, 1); // 1: 1
+						defaultOnKillEvent(env, 214895, 0, 1, 1);
 						return true;
 					}
 					break;
 				}
 				case 214896: { // Auxiliary Power Generator
 					if (var == 2 && var2 != 1) {
-						defaultOnKillEvent(env, 214896, 0, 1, 2); // 2: 1
+						defaultOnKillEvent(env, 214896, 0, 1, 2);
 						return true;
 					}
 					break;
 				}
 				case 214897: { // Emergency Generator
 					if (var == 2 && var3 != 1) {
-						defaultOnKillEvent(env, 214897, 0, 1, 3); // 3: 1
+						defaultOnKillEvent(env, 214897, 0, 1, 3);
 						return true;
 					}
 					break;

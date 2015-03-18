@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.beluslan;
+package quest.Beluslan;
 
 import com.aionemu.gameserver.model.DialogAction;
 import com.aionemu.gameserver.model.gameobjects.Npc;
@@ -27,10 +19,6 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-/**
- * @author Ritsu
- *
- */
 public class _2513TheStrangeCottage extends QuestHandler {
 
 	private final static int questId = 2513;
@@ -41,11 +29,11 @@ public class _2513TheStrangeCottage extends QuestHandler {
 
 	@Override
 	public void register() {
-		qe.registerQuestNpc(204732).addOnQuestStart(questId); // Gnalin
+		qe.registerQuestNpc(204732).addOnQuestStart(questId);
 		qe.registerQuestNpc(204732).addOnTalkEvent(questId);
-		qe.registerQuestNpc(204827).addOnTalkEvent(questId); // Hild
-		qe.registerQuestNpc(204826).addOnTalkEvent(questId); // Freki
-		qe.registerQuestNpc(790022).addOnTalkEvent(questId); // Byggvir
+		qe.registerQuestNpc(204827).addOnTalkEvent(questId);
+		qe.registerQuestNpc(204826).addOnTalkEvent(questId);
+		qe.registerQuestNpc(790022).addOnTalkEvent(questId);
 	}
 
 	@Override
@@ -59,7 +47,7 @@ public class _2513TheStrangeCottage extends QuestHandler {
 		DialogAction dialog = env.getDialog();
 
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 204732) {
+			if (targetId == 204732) { // Gnalin
 				if (dialog == DialogAction.QUEST_SELECT) {
 					return sendQuestDialog(env, 4762);
 				} else {
@@ -68,7 +56,7 @@ public class _2513TheStrangeCottage extends QuestHandler {
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
-			if (targetId == 204826) {// Freki
+			if (targetId == 204826) { // Freki
 				switch (dialog) {
 					case QUEST_SELECT:
 						if (var == 0) {
@@ -85,7 +73,7 @@ public class _2513TheStrangeCottage extends QuestHandler {
 						break;
 				}
 			}
-			if (targetId == 204827) {// Hild
+			if (targetId == 204827) { // Hild
 				switch (dialog) {
 					case QUEST_SELECT:
 						if (var == 0) {
@@ -102,7 +90,7 @@ public class _2513TheStrangeCottage extends QuestHandler {
 						break;
 				}
 			}
-			if (targetId == 790022) {
+			if (targetId == 790022) { // Vigbir
 				switch (dialog) {
 					case QUEST_SELECT:
 						if (var == 0) {
@@ -120,7 +108,7 @@ public class _2513TheStrangeCottage extends QuestHandler {
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 204732) {
+			if (targetId == 204732) { // Gnalin
 				switch (dialog) {
 					case USE_OBJECT:
 						return sendQuestDialog(env, 10002);

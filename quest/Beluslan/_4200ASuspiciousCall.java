@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.beluslan;
+package quest.Beluslan;
 
 import com.aionemu.gameserver.model.DialogAction;
 import com.aionemu.gameserver.model.gameobjects.Item;
@@ -34,26 +26,19 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.WorldMapInstance;
 
-/**
- * @author kecimis
- */
 public class _4200ASuspiciousCall extends QuestHandler {
 
 	private final static int questId = 4200;
 	private final static int[] npc_ids = { 204839, 798332, 700522, 279006, 204286 };
 
-	/*
-	 * 204839 - Uikinerk 798332 - Haorunerk 700522 - Haorunerks Bag 279006 -
-	 * Garkbinerk 204286 - Payrinrinerk
-	 */
 	public _4200ASuspiciousCall() {
 		super(questId);
 	}
 
 	@Override
 	public void register() {
-		qe.registerQuestNpc(204839).addOnQuestStart(questId); // Uikinerk
-		qe.registerQuestItem(182209097, questId); // Teleport Scroll
+		qe.registerQuestNpc(204839).addOnQuestStart(questId);
+		qe.registerQuestItem(182209097, questId);
 		for (int npc_id : npc_ids) {
 			qe.registerQuestNpc(npc_id).addOnTalkEvent(questId);
 		}
@@ -84,7 +69,7 @@ public class _4200ASuspiciousCall extends QuestHandler {
 		int var = qs.getQuestVarById(0);
 
 		if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 204286)// Payrinrinerk
+			if (targetId == 204286) // Payrinrinerk
 			{
 				if (env.getDialog() == DialogAction.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);
@@ -96,7 +81,7 @@ public class _4200ASuspiciousCall extends QuestHandler {
 			}
 			return false;
 		} else if (qs.getStatus() == QuestStatus.START) {
-			if (targetId == 204839)// Uikinerk
+			if (targetId == 204839) // Uikinerk
 			{
 				switch (env.getDialog()) {
 					case QUEST_SELECT:
@@ -104,11 +89,8 @@ public class _4200ASuspiciousCall extends QuestHandler {
 					case SELECT_ACTION_1011:
 						return sendQuestDialog(env, 1011);
 					case SETPRO1:
-						// Create instance
 						WorldMapInstance newInstance = InstanceService.getNextAvailableInstance(300100000);
 						InstanceService.registerPlayerWithInstance(newInstance, player);
-						// teleport to cell in steel rake: 300100000 403.55
-						// 508.11 885.77 0
 						TeleportService2.teleportTo(player, 300100000, newInstance.getInstanceId(), 403.55f, 508.11f, 885.77f);
 						qs.setQuestVarById(0, var + 1);
 						updateQuestStatus(env);
@@ -132,9 +114,7 @@ public class _4200ASuspiciousCall extends QuestHandler {
 					default:
 						break;
 				}
-			} else if (targetId == 700522 && var == 2) // Haorunerks Bag, loc:
-														// 401.24 503.19 885.76
-														// 119
+			} else if (targetId == 700522 && var == 2) // Haorunerk's Bag
 			{
 				ThreadPoolManager.getInstance().schedule(new Runnable() {
 					@Override
@@ -143,7 +123,7 @@ public class _4200ASuspiciousCall extends QuestHandler {
 					}
 				}, 3000);
 				return true;
-			} else if (targetId == 279006 && var == 3)// Garkbinerk
+			} else if (targetId == 279006 && var == 3) // Garkbinerk
 			{
 				switch (env.getDialog()) {
 					case QUEST_SELECT:
@@ -182,8 +162,6 @@ public class _4200ASuspiciousCall extends QuestHandler {
 			public void run() {
 				PacketSendUtility.broadcastPacket(player, new SM_ITEM_USAGE_ANIMATION(player.getObjectId(), itemObjId, id, 0, 1, 0), true);
 				removeQuestItem(env, 182209097, 1);
-				// teleport location(BlackCloudIsland): 400010000 3419.16
-				// 2445.43 2766.54 57
 				TeleportService2.teleportTo(player, 400010000, 3419.16f, 2445.43f, 2766.54f, (byte) 57);
 				qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 				updateQuestStatus(env);

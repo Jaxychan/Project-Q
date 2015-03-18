@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.beluslan;
+package quest.Beluslan;
 
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.DialogAction;
@@ -35,23 +27,12 @@ import com.aionemu.gameserver.skillengine.SkillEngine;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
-/**
- * Meet with Tristran (204774). Talk with Stua (204809). Infiltrate the Port
- * through the Secret Port Entrance (700359). Don't blow your cover! Find the
- * Alquimia Entrance, break through to the Daevic Genesis Lab, and destroy the
- * Research Center Power Generator (700349) (1). Escape from the research center
- * and send a Signal Flare signal (182204317) to begin the attack. Report to
- * Tristran.
- *
- * @author Hellboy aion4Free MetaWind
- * @reworked vlog
- */
-public class _2058ASpyAmongtheLepharists extends QuestHandler {
+public class _2058ASpyAmongTheLepharists extends QuestHandler {
 
 	private final static int questId = 2058;
 	private final static int[] npc_ids = { 204774, 204809, 700359 };
 
-	public _2058ASpyAmongtheLepharists() {
+	public _2058ASpyAmongTheLepharists() {
 		super(questId);
 	}
 
@@ -112,7 +93,7 @@ public class _2058ASpyAmongtheLepharists extends QuestHandler {
 					case SETPRO1: {
 						giveQuestItem(env, 164000233, 1);
 						playQuestMovie(env, 249);
-						return defaultCloseDialog(env, 0, 1); // 1
+						return defaultCloseDialog(env, 0, 1);
 					}
 					default:
 						break;
@@ -130,7 +111,7 @@ public class _2058ASpyAmongtheLepharists extends QuestHandler {
 							}
 							QuestService.questTimerStart(env, 240);
 							SkillEngine.getInstance().applyEffectDirectly(1865, player, player, (350 * 1000));
-							return defaultCloseDialog(env, 1, 2); // 2
+							return defaultCloseDialog(env, 1, 2);
 						}
 					default:
 						break;
@@ -155,7 +136,7 @@ public class _2058ASpyAmongtheLepharists extends QuestHandler {
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs != null && qs.getStatus() == QuestStatus.START) {
 			TeleportService2.teleportTo(player, player.getWorldId(), player.getInstanceId(), 2452, 2474, 672.25f, (byte) 28);
-			changeQuestStep(env, 2, 3, false); // 3
+			changeQuestStep(env, 2, 3, false);
 			return true;
 		}
 		return false;
@@ -163,7 +144,7 @@ public class _2058ASpyAmongtheLepharists extends QuestHandler {
 
 	@Override
 	public boolean onKillEvent(QuestEnv env) {
-		return defaultOnKillEvent(env, 700349, 3, 4); // 4
+		return defaultOnKillEvent(env, 700349, 3, 4);
 	}
 
 	@Override
@@ -173,7 +154,7 @@ public class _2058ASpyAmongtheLepharists extends QuestHandler {
 			return HandlerResult.UNKNOWN;
 		}
 		if (player.isInsideZone(ZoneName.get("DF3_ITEMUSEAREA_Q2058"))) {
-			return HandlerResult.fromBoolean(useQuestItem(env, item, 4, 4, true, 251)); // reward
+			return HandlerResult.fromBoolean(useQuestItem(env, item, 4, 4, true, 251));
 		}
 		return HandlerResult.FAILED;
 	}
@@ -189,8 +170,7 @@ public class _2058ASpyAmongtheLepharists extends QuestHandler {
 				if (var == 3) {
 					qs.setQuestVar(1);
 					updateQuestStatus(env);
-					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(SystemMessageId.QUEST_FAILED_$1, DataManager.QUEST_DATA.getQuestById(questId)
-							.getName()));
+					PacketSendUtility.sendPacket(player, new SM_SYSTEM_MESSAGE(SystemMessageId.QUEST_FAILED_$1, DataManager.QUEST_DATA.getQuestById(questId).getName()));
 					return true;
 				}
 			}

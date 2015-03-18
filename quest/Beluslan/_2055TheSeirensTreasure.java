@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.beluslan;
+package quest.Beluslan;
 
 import com.aionemu.gameserver.model.gameobjects.Npc;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -24,15 +16,6 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 
-/**
- * Talk with Sleipnir (204768). Talk with Rubelik (204743). Talk with Sleipnir.
- * Find Esnu (204808) and make a deal with her. Remove Aika Deathsong (213741)
- * and bring the key (182204312) to Esnu. Talk again with Esnu and get the key
- * to Golden Trumpet Temple (730135). Report the results to Sleipnir.
- *
- * @author Hellboy aion4Free
- * @reworked vlog
- */
 public class _2055TheSeirensTreasure extends QuestHandler {
 
 	private final static int questId = 2055;
@@ -93,20 +76,20 @@ public class _2055TheSeirensTreasure extends QuestHandler {
 						case SETPRO1:
 							if (var == 0) {
 								playQuestMovie(env, 239);
-								return defaultCloseDialog(env, 0, 1, 182204310, 1, 0, 0); // 1
+								return defaultCloseDialog(env, 0, 1, 182204310, 1, 0, 0);
 							}
 						case SETPRO3:
-							return defaultCloseDialog(env, 2, 3); // 3
+							return defaultCloseDialog(env, 2, 3);
 						case SELECT_QUEST_REWARD: {
 							removeQuestItem(env, 182204321, 1);
-							return defaultCloseDialog(env, 6, 6, true, true); // reward
+							return defaultCloseDialog(env, 6, 6, true, true);
 						}
 						case SELECT_ACTION_3143:
 							return sendQuestDialog(env, 3143);
 						case SETPRO7: {
 							playQuestMovie(env, 239);
 							removeQuestItem(env, 182204321, 1);
-							return defaultCloseDialog(env, 6, 6, true, true); // reward
+							return defaultCloseDialog(env, 6, 6, true, true);
 						}
 						default:
 							break;
@@ -119,7 +102,7 @@ public class _2055TheSeirensTreasure extends QuestHandler {
 								return sendQuestDialog(env, 1352);
 							}
 						case SETPRO2:
-							return defaultCloseDialog(env, 1, 2, 182204311, 1, 182204310, 1); // 2
+							return defaultCloseDialog(env, 1, 2, 182204311, 1, 182204310, 1);
 						default:
 							break;
 					}
@@ -139,19 +122,19 @@ public class _2055TheSeirensTreasure extends QuestHandler {
 						case SETPRO4:
 							if (var == 3) {
 								playQuestMovie(env, 240);
-								return defaultCloseDialog(env, 3, 4, 0, 0, 182204311, 1); // 4
+								return defaultCloseDialog(env, 3, 4, 0, 0, 182204311, 1);
 							}
 						case CHECK_USER_HAS_QUEST_ITEM:
-							return checkQuestItems(env, 4, 5, false, 10000, 10001); // 5
+							return checkQuestItems(env, 4, 5, false, 10000, 10001);
 						case FINISH_DIALOG:
 							if (var == 5) {
-								defaultCloseDialog(env, 5, 5); // 5
+								defaultCloseDialog(env, 5, 5);
 							}
 							if (var == 4) {
-								defaultCloseDialog(env, 4, 4); // 4
+								defaultCloseDialog(env, 4, 4);
 							}
 						case SETPRO6:
-							return defaultCloseDialog(env, 5, 6, false, false, 182204321, 1, 0, 0); // 6
+							return defaultCloseDialog(env, 5, 6, false, false, 182204321, 1, 0, 0);
 						default:
 							break;
 					}

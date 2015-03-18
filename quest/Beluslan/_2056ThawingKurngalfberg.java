@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.beluslan;
+package quest.Beluslan;
 
 import com.aionemu.gameserver.model.DialogAction;
 import com.aionemu.gameserver.model.gameobjects.Item;
@@ -33,9 +25,6 @@ import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
-/**
- * @author Rhys2002
- */
 public class _2056ThawingKurngalfberg extends QuestHandler {
 
 	private final static int questId = 2056;
@@ -82,7 +71,7 @@ public class _2056ThawingKurngalfberg extends QuestHandler {
 		}
 
 		if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 204753) {
+			if (targetId == 204753) { // Kistenian
 				if (env.getDialog() == DialogAction.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);
 				} else {
@@ -93,7 +82,7 @@ public class _2056ThawingKurngalfberg extends QuestHandler {
 		} else if (qs.getStatus() != QuestStatus.START) {
 			return false;
 		}
-		if (targetId == 204753) {
+		if (targetId == 204753) { // Kistenian
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 0) {
@@ -127,7 +116,7 @@ public class _2056ThawingKurngalfberg extends QuestHandler {
 				default:
 					break;
 			}
-		} else if (targetId == 790016) {
+		} else if (targetId == 790016) { // Etun
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 1) {
@@ -146,7 +135,7 @@ public class _2056ThawingKurngalfberg extends QuestHandler {
 				default:
 					break;
 			}
-		} else if (targetId == 730036) {
+		} else if (targetId == 730036) { // Anoramas
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 1) {
@@ -165,7 +154,7 @@ public class _2056ThawingKurngalfberg extends QuestHandler {
 				default:
 					break;
 			}
-		} else if (targetId == 279000) {
+		} else if (targetId == 279000) { // Triminos
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 1) {

@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.beluslan;
+package quest.Beluslan;
 
 import com.aionemu.gameserver.model.DialogAction;
 import com.aionemu.gameserver.model.gameobjects.Item;
@@ -30,16 +22,10 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-/**
- * @author Rhys2002
- */
 public class _2052AnUndeadOccupation extends QuestHandler {
 
 	private final static int questId = 2052;
-	private final static int[] npc_ids = { 204715, 204801, 204805 };// 182204303
-																	// 184000022
-																	// 152000553
-																	// 182204304
+	private final static int[] npc_ids = { 204715, 204801, 204805 };
 
 	public _2052AnUndeadOccupation() {
 		super(questId);
@@ -81,7 +67,7 @@ public class _2052AnUndeadOccupation extends QuestHandler {
 		}
 
 		if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 204715) {
+			if (targetId == 204715) { // Grundt
 				if (env.getDialog() == DialogAction.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);
 				} else if (env.getDialogId() == DialogAction.SELECT_QUEST_REWARD.id()) {
@@ -94,7 +80,7 @@ public class _2052AnUndeadOccupation extends QuestHandler {
 		} else if (qs.getStatus() != QuestStatus.START) {
 			return false;
 		}
-		if (targetId == 204715) {
+		if (targetId == 204715) { // Grundt
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 0) {
@@ -110,7 +96,7 @@ public class _2052AnUndeadOccupation extends QuestHandler {
 				default:
 					break;
 			}
-		} else if (targetId == 204801) {
+		} else if (targetId == 204801) { // Gigrite
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 1) {
@@ -119,10 +105,11 @@ public class _2052AnUndeadOccupation extends QuestHandler {
 						return sendQuestDialog(env, 1693);
 					}
 				case SETPRO2:
-					if (var == 1) {
-						qs.setQuestVarById(0, var + 1);
-						updateQuestStatus(env);
-						PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
+					if (var == 7) {
+					qs.setQuestVar(10);
+					qs.setStatus(QuestStatus.REWARD);
+					updateQuestStatus(env);
+					PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(env.getVisibleObject().getObjectId(), 10));
 						return true;
 					}
 				case SETPRO3:
@@ -135,7 +122,7 @@ public class _2052AnUndeadOccupation extends QuestHandler {
 				default:
 					break;
 			}
-		} else if (targetId == 204805) {
+		} else if (targetId == 204805) { // Vanargand
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 13) {
@@ -182,7 +169,7 @@ public class _2052AnUndeadOccupation extends QuestHandler {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		}
 
-		if ((targetId == 213044 || targetId == 213045) && qs.getQuestVarById(0) > 1 && qs.getQuestVarById(0) <= 7) {
+		if ((targetId == 213044 || targetId == 213045) && qs.getQuestVarById(0) > 1 && qs.getQuestVarById(0) <= 7) { // Pale Zombie
 
 			qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 			updateQuestStatus(env);

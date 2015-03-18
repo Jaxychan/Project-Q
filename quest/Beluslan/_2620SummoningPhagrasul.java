@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.beluslan;
+package quest.Beluslan;
 
 import com.aionemu.gameserver.model.DialogAction;
 import com.aionemu.gameserver.model.EmotionType;
@@ -32,10 +24,6 @@ import com.aionemu.gameserver.services.QuestService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 
-/**
- * @author Nephis
- *
- */
 public class _2620SummoningPhagrasul extends QuestHandler {
 
 	private final static int questId = 2620;
@@ -47,12 +35,10 @@ public class _2620SummoningPhagrasul extends QuestHandler {
 
 	@Override
 	public void register() {
-		qe.registerQuestNpc(204787).addOnQuestStart(questId); // Chieftain
-																// Akagitan
+		qe.registerQuestNpc(204787).addOnQuestStart(questId);
 		qe.registerQuestNpc(204787).addOnTalkEvent(questId);
-		qe.registerQuestNpc(204824).addOnTalkEvent(questId); // Gigantic
-																// Phagrasul
-		qe.registerQuestNpc(700323).addOnTalkEvent(questId); // Huge Mamut Skull
+		qe.registerQuestNpc(204824).addOnTalkEvent(questId);
+		qe.registerQuestNpc(700323).addOnTalkEvent(questId);
 		for (int mob_id : mob_ids) {
 			qe.registerQuestNpc(mob_id).addOnKillEvent(questId);
 		}
@@ -72,7 +58,7 @@ public class _2620SummoningPhagrasul extends QuestHandler {
 		}
 
 		switch (targetId) {
-			case 213109:
+			case 213109: // Mamut Soul
 				if (qs.getQuestVarById(1) < 5 && qs.getQuestVarById(0) == 1) {
 					qs.setQuestVarById(1, qs.getQuestVarById(1) + 1);
 					updateQuestStatus(env);
@@ -80,7 +66,7 @@ public class _2620SummoningPhagrasul extends QuestHandler {
 				}
 				break;
 
-			case 213111:
+			case 213111: // Mamootie Spirit
 				if (qs.getQuestVarById(2) < 5 && qs.getQuestVarById(0) == 1) {
 					qs.setQuestVarById(2, qs.getQuestVarById(2) + 1);
 					updateQuestStatus(env);
@@ -102,7 +88,7 @@ public class _2620SummoningPhagrasul extends QuestHandler {
 		DialogAction dialog = env.getDialog();
 
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 204787) {// Chieftain Akagitan
+			if (targetId == 204787) { // Chieftain Akagitan
 				if (dialog == DialogAction.QUEST_SELECT) {
 					return sendQuestDialog(env, 4762);
 				} else if (dialog == DialogAction.QUEST_ACCEPT_1) {
@@ -116,7 +102,7 @@ public class _2620SummoningPhagrasul extends QuestHandler {
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
-			if (targetId == 204824) {
+			if (targetId == 204824) { // Gigantic Phagrasul
 				switch (dialog) {
 					case QUEST_SELECT:
 						if (var == 0) {
@@ -140,7 +126,7 @@ public class _2620SummoningPhagrasul extends QuestHandler {
 						break;
 				}
 			}
-			if (targetId == 700323) {// Hugh mamut skull
+			if (targetId == 700323) { // Huge Mamut Skull
 				switch (dialog) {
 					case USE_OBJECT:
 						if (var == 0) {
@@ -166,7 +152,7 @@ public class _2620SummoningPhagrasul extends QuestHandler {
 						break;
 				}
 			}
-			if (targetId == 204787) {// Chieftain Akagitan
+			if (targetId == 204787) { // Chieftain Akagitan
 				switch (dialog) {
 					case USE_OBJECT:
 						qs.setStatus(QuestStatus.REWARD);
@@ -179,7 +165,7 @@ public class _2620SummoningPhagrasul extends QuestHandler {
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 204787) {
+			if (targetId == 204787) { // Chieftain Akagitan
 				return sendQuestEndDialog(env);
 			}
 		}

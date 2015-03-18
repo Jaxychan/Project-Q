@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.beluslan;
+package quest.Beluslan;
 
 import com.aionemu.gameserver.model.DialogAction;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -24,15 +16,11 @@ import com.aionemu.gameserver.questEngine.model.QuestEnv;
 import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 
-/**
- * @author David
- * @reworked vlog
- */
-public class _2651SpyAFriendsWhereabouts extends QuestHandler {
+public class _2651AFriendsWhereabouts extends QuestHandler {
 
 	private final static int questId = 2651;
 
-	public _2651SpyAFriendsWhereabouts() {
+	public _2651AFriendsWhereabouts() {
 		super(questId);
 	}
 
@@ -70,7 +58,7 @@ public class _2651SpyAFriendsWhereabouts extends QuestHandler {
 							}
 						}
 						case SETPRO1: {
-							return defaultCloseDialog(env, 0, 1); // 1
+							return defaultCloseDialog(env, 0, 1);
 						}
 						default:
 							break;
@@ -85,7 +73,7 @@ public class _2651SpyAFriendsWhereabouts extends QuestHandler {
 							}
 						}
 						case SELECT_QUEST_REWARD: {
-							changeQuestStep(env, 1, 1, true); // reward
+							changeQuestStep(env, 1, 1, true);
 							return sendQuestDialog(env, 5);
 						}
 						default:

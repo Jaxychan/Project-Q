@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.beluslan;
+package quest.Beluslan;
 
 import com.aionemu.gameserver.model.gameobjects.Item;
 import com.aionemu.gameserver.model.gameobjects.Npc;
@@ -32,14 +24,11 @@ import com.aionemu.gameserver.services.QuestService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.utils.ThreadPoolManager;
 
-/**
- * @author Altaress
- */
-public class _2578ARingforLuck extends QuestHandler {
+public class _2578ARingForLuck extends QuestHandler {
 
 	private final static int questId = 2578;
 
-	public _2578ARingforLuck() {
+	public _2578ARingForLuck() {
 		super(questId);
 	}
 
@@ -66,7 +55,7 @@ public class _2578ARingforLuck extends QuestHandler {
 				PacketSendUtility.sendPacket(player, new SM_DIALOG_WINDOW(0, 0));
 				return true;
 			}
-		} else if (targetId == 204741) {
+		} else if (targetId == 204741) { // Denarynt
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 0) {
 				if (env.getDialog() == DialogAction.QUEST_SELECT) {
 					return sendQuestDialog(env, 1352);
@@ -79,7 +68,7 @@ public class _2578ARingforLuck extends QuestHandler {
 					return sendQuestStartDialog(env);
 				}
 			}
-		} else if (targetId == 790017) {
+		} else if (targetId == 790017) { // Rerua
 			if (qs != null && qs.getStatus() == QuestStatus.START && qs.getQuestVarById(0) == 1) {
 				if (env.getDialog() == DialogAction.QUEST_SELECT) {
 					return sendQuestDialog(env, 1693);
@@ -92,12 +81,11 @@ public class _2578ARingforLuck extends QuestHandler {
 					return sendQuestStartDialog(env);
 				}
 			}
-		} else if (targetId == 204746) {
+		} else if (targetId == 204746) { // Midheim
 			if (qs != null) {
 				if (env.getDialog() == DialogAction.QUEST_SELECT && qs.getStatus() == QuestStatus.START) {
 					return sendQuestDialog(env, 2375);
-				} else if (env.getDialogId() == DialogAction.SELECT_QUEST_REWARD.id() && qs.getStatus() != QuestStatus.COMPLETE
-						&& qs.getStatus() != QuestStatus.NONE) {
+				} else if (env.getDialogId() == DialogAction.SELECT_QUEST_REWARD.id() && qs.getStatus() != QuestStatus.COMPLETE && qs.getStatus() != QuestStatus.NONE) {
 					removeQuestItem(env, 182204453, 1);
 					qs.setQuestVar(1);
 					qs.setStatus(QuestStatus.REWARD);

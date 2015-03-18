@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.beluslan;
+package quest.Beluslan;
 
 import com.aionemu.gameserver.dataholders.DataManager;
 import com.aionemu.gameserver.model.gameobjects.player.Player;
@@ -29,15 +21,12 @@ import com.aionemu.gameserver.services.teleport.TeleportService2;
 import com.aionemu.gameserver.skillengine.SkillEngine;
 import com.aionemu.gameserver.world.WorldMapInstance;
 
-/**
- * @author Gigi
- */
-public class _28602IntotheUnknown extends QuestHandler {
+public class _28602JourneyIntoTheUnknown extends QuestHandler {
 
 	private final static int questId = 28602;
 	private final static int[] npc_ids = { 205234, 700939 };
 
-	public _28602IntotheUnknown() {
+	public _28602JourneyIntoTheUnknown() {
 		super(questId);
 	}
 
@@ -114,7 +103,7 @@ public class _28602IntotheUnknown extends QuestHandler {
 		int targetId = env.getTargetId();
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
 		if (qs == null || qs.getStatus() == QuestStatus.NONE || qs.canRepeat()) {
-			if (targetId == 205234) {
+			if (targetId == 205234) { // Bridget
 				if (env.getDialog() == DialogAction.QUEST_SELECT) {
 					return sendQuestDialog(env, 4762);
 				} else {
@@ -123,7 +112,7 @@ public class _28602IntotheUnknown extends QuestHandler {
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
-			if (targetId == 205234) {
+			if (targetId == 205234) { // Bridget
 				if (env.getDialog() == DialogAction.QUEST_SELECT) {
 					return sendQuestDialog(env, 1011);
 				} else if (env.getDialog() == DialogAction.SETPRO1) {
@@ -131,13 +120,12 @@ public class _28602IntotheUnknown extends QuestHandler {
 						WorldMapInstance newInstance = InstanceService.getNextAvailableInstance(300230000);
 						InstanceService.registerPlayerWithInstance(newInstance, player);
 						TeleportService2.teleportTo(player, 300230000, newInstance.getInstanceId(), 244.98566f, 244.14162f, 189.52058f, (byte) 30);
-						player.getPortalCooldownList().addPortalCooldown(300230000,
-								DataManager.INSTANCE_COOLTIME_DATA.getInstanceEntranceCooltime(player, newInstance.getMapId()));
-						changeQuestStep(env, 0, 1, false); // 1
+						player.getPortalCooldownList().addPortalCooldown(300230000, DataManager.INSTANCE_COOLTIME_DATA.getInstanceEntranceCooltime(player, newInstance.getMapId()));
+						changeQuestStep(env, 0, 1, false);
 					}
 					return closeDialogWindow(env);
 				}
-			} else if (targetId == 700939) {
+			} else if (targetId == 700939) { // Robstin's Corpse
 				if (env.getDialog() == DialogAction.USE_OBJECT) {
 					if (var == 2) {
 						return sendQuestDialog(env, 1693);
@@ -147,7 +135,7 @@ public class _28602IntotheUnknown extends QuestHandler {
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 205234) {
+			if (targetId == 205234) { // Bridget
 				return sendQuestEndDialog(env);
 			}
 		}

@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.beluslan;
+package quest.Beluslan;
 
 import com.aionemu.gameserver.model.DialogAction;
 import com.aionemu.gameserver.model.gameobjects.Npc;
@@ -27,10 +19,6 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-/**
- * @author Ritsu
- *
- */
 public class _4501DelayedOrder extends QuestHandler {
 
 	private final static int questId = 4501;
@@ -59,7 +47,7 @@ public class _4501DelayedOrder extends QuestHandler {
 		DialogAction dialog = env.getDialog();
 
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 204728) {
+			if (targetId == 204728) { // Lapion
 				if (dialog == DialogAction.QUEST_SELECT) {
 					return sendQuestDialog(env, 1011);
 				} else {
@@ -68,7 +56,7 @@ public class _4501DelayedOrder extends QuestHandler {
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
 			int var = qs.getQuestVarById(0);
-			if (targetId == 204728) {
+			if (targetId == 204728) { // Lapion
 				switch (dialog) {
 					case QUEST_SELECT:
 						if (var == 2) {
@@ -82,7 +70,7 @@ public class _4501DelayedOrder extends QuestHandler {
 						break;
 				}
 			}
-			if (targetId == 204340) {
+			if (targetId == 204340) { // Tekor
 				switch (dialog) {
 					case QUEST_SELECT:
 						if (var == 0) {
@@ -99,7 +87,7 @@ public class _4501DelayedOrder extends QuestHandler {
 						break;
 				}
 			}
-			if (targetId == 204348) {
+			if (targetId == 204348) { // Virashak
 				switch (dialog) {
 					case QUEST_SELECT:
 						if (var == 1) {
@@ -117,7 +105,7 @@ public class _4501DelayedOrder extends QuestHandler {
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 204728) {
+			if (targetId == 204728) { // Lapion
 				return sendQuestEndDialog(env);
 			}
 		}

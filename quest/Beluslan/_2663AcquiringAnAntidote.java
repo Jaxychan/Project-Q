@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.beluslan;
+package quest.Beluslan;
 
 import com.aionemu.gameserver.model.DialogAction;
 import com.aionemu.gameserver.model.gameobjects.Npc;
@@ -27,15 +19,12 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-/**
- * @author VladimirZ
- */
-public class _2663AcquiringanAntidote extends QuestHandler {
+public class _2663AcquiringAnAntidote extends QuestHandler {
 
 	private final static int questId = 2663;
 	private final static int[] npc_ids = { 204777, 204790 };
 
-	public _2663AcquiringanAntidote() {
+	public _2663AcquiringAnAntidote() {
 		super(questId);
 	}
 
@@ -55,7 +44,7 @@ public class _2663AcquiringanAntidote extends QuestHandler {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		}
 		QuestState qs = player.getQuestStateList().getQuestState(questId);
-		if (targetId == 204777) {
+		if (targetId == 204777) { // Dewi
 			if (qs == null || qs.getStatus() == QuestStatus.NONE) {
 				if (env.getDialog() == DialogAction.QUEST_SELECT) {
 					return sendQuestDialog(env, 1011);
@@ -70,7 +59,7 @@ public class _2663AcquiringanAntidote extends QuestHandler {
 
 		int var = qs.getQuestVarById(0);
 		if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 204777) {
+			if (targetId == 204777) { // Dewi
 				if (env.getDialog() == DialogAction.USE_OBJECT) {
 					return sendQuestDialog(env, 2375);
 				} else if (env.getDialogId() == DialogAction.SELECT_QUEST_REWARD.id()) {
@@ -82,7 +71,7 @@ public class _2663AcquiringanAntidote extends QuestHandler {
 		} else if (qs.getStatus() != QuestStatus.START) {
 			return false;
 		}
-		if (targetId == 204790) {
+		if (targetId == 204790) { // Laksyatil
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 0) {

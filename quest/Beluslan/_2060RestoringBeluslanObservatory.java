@@ -1,21 +1,4 @@
-/**
- * This file is part of Aion-Lightning <aion-lightning.org>.
- *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
- */
-
-package quest.beluslan;
+Arita
 
 import com.aionemu.gameserver.model.DialogAction;
 import com.aionemu.gameserver.model.gameobjects.Item;
@@ -28,20 +11,6 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
-/**
- * Talk with Hod (204701).<br>
- * Talk with Gwendolin (204785).<br>
- * Talk with Hisui (278003).<br>
- * Talk with Glati (278088) (182204318).<br>
- * Go to Leibo Island (400010001), gather Aether, and bring it (182204319) to
- * Gwendolin.<br>
- * Destroy Field Suppressors around the Observatory (700290) (3).<br>
- * Repair the Aetheric Field Maintaining Device (700293).<br>
- * Report to Hod.<br>
- *
- * @author kecimis
- * @reworked vlog
- */
 public class _2060RestoringBeluslanObservatory extends QuestHandler {
 
 	private final static int questId = 2060;
@@ -93,7 +62,7 @@ public class _2060RestoringBeluslanObservatory extends QuestHandler {
 							}
 						}
 						case SETPRO1: {
-							return defaultCloseDialog(env, 0, 1); // 1
+							return defaultCloseDialog(env, 0, 1);
 						}
 						default:
 							break;
@@ -109,18 +78,16 @@ public class _2060RestoringBeluslanObservatory extends QuestHandler {
 								if (QuestService.collectItemCheck(env, false)) {
 									return sendQuestDialog(env, 2375);
 								} else {
-									giveQuestItem(env, 182204318, 1); // give
-																		// another
-																		// bottle
+									giveQuestItem(env, 182204318, 1);
 									return sendQuestDialog(env, 2461);
 								}
 							}
 						}
 						case SETPRO2: {
-							return defaultCloseDialog(env, 1, 2); // 2
+							return defaultCloseDialog(env, 1, 2);
 						}
 						case SETPRO5: {
-							return defaultCloseDialog(env, 4, 5, 0, 0, 182204319, 1); // 5
+							return defaultCloseDialog(env, 4, 5, 0, 0, 182204319, 1);
 						}
 						case FINISH_DIALOG: {
 							if (var == 4) {
@@ -140,7 +107,7 @@ public class _2060RestoringBeluslanObservatory extends QuestHandler {
 							}
 						}
 						case SETPRO3: {
-							return defaultCloseDialog(env, 2, 3); // 3
+							return defaultCloseDialog(env, 2, 3);
 						}
 						default:
 							break;
@@ -155,7 +122,7 @@ public class _2060RestoringBeluslanObservatory extends QuestHandler {
 							}
 						}
 						case SETPRO4: {
-							return defaultCloseDialog(env, 3, 4, 182204318, 1, 0, 0); // 4
+							return defaultCloseDialog(env, 3, 4, 182204318, 1, 0, 0);
 						}
 						default:
 							break;
@@ -165,7 +132,7 @@ public class _2060RestoringBeluslanObservatory extends QuestHandler {
 				case 700293: { // Aetheric Field Maintaining Device
 					if (dialog == DialogAction.USE_OBJECT) {
 						if (var == 8) {
-							return useQuestObject(env, 8, 8, true, 0); // reward
+							return useQuestObject(env, 8, 8, true, 0);
 						}
 					}
 				}
@@ -190,10 +157,7 @@ public class _2060RestoringBeluslanObservatory extends QuestHandler {
 			int var = qs.getQuestVarById(0);
 			if (var == 4) {
 				if (player.isInsideZone(ZoneName.get("AB1_ITEMUSEAREA_Q2060"))) {
-					return HandlerResult.fromBoolean(useQuestItem(env, item, 4, 4, false, 182204319, 1, 0)); // 4
-																												// +
-																												// aether
-																												// bottle
+					return HandlerResult.fromBoolean(useQuestItem(env, item, 4, 4, false, 182204319, 1, 0));
 				}
 			}
 		}
@@ -202,6 +166,6 @@ public class _2060RestoringBeluslanObservatory extends QuestHandler {
 
 	@Override
 	public boolean onKillEvent(QuestEnv env) {
-		return defaultOnKillEvent(env, 700290, 5, 8); // 6, 7, 8
+		return defaultOnKillEvent(env, 700290, 5, 8);
 	}
 }

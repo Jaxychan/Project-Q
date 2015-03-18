@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.beluslan;
+package quest.Beluslan;
 
 import com.aionemu.gameserver.ai2.event.AIEventType;
 import com.aionemu.gameserver.model.DialogAction;
@@ -31,10 +23,6 @@ import com.aionemu.gameserver.questEngine.task.QuestTasks;
 import com.aionemu.gameserver.services.QuestService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-/**
- * @author Cheatkiller
- *
- */
 public class _2634TheDraupnirRedemption extends QuestHandler {
 
 	private final static int questId = 2634;
@@ -66,7 +54,7 @@ public class _2634TheDraupnirRedemption extends QuestHandler {
 		}
 
 		if (qs == null || qs.getStatus() == QuestStatus.NONE) {
-			if (targetId == 204828) {
+			if (targetId == 204828) { // Ripley
 				if (env.getDialog() == DialogAction.QUEST_SELECT) {
 					return sendQuestDialog(env, 4762);
 				} else {
@@ -75,7 +63,7 @@ public class _2634TheDraupnirRedemption extends QuestHandler {
 			}
 		} else if (qs.getStatus() == QuestStatus.START) {
 			switch (targetId) {
-				case 700350: {
+				case 700350: { // Man Locked in the Wall
 					switch (env.getDialog()) {
 						case USE_OBJECT: {
 							if (qs.getQuestVarById(0) == 0) {
@@ -85,12 +73,11 @@ public class _2634TheDraupnirRedemption extends QuestHandler {
 						case SETPRO1: {
 							Npc npc = (Npc) env.getVisibleObject();
 							npc.getController().onDelete();
-							Npc survivor = (Npc) QuestService.spawnQuestNpc(npc.getWorldId(), npc.getInstanceId(), 204830, player.getX(), player.getY(),
-									player.getZ(), (byte) 0);
+							Npc survivor = (Npc) QuestService.spawnQuestNpc(npc.getWorldId(), npc.getInstanceId(), 204830, player.getX(), player.getY(), player.getZ(), (byte) 0);
 							PacketSendUtility.sendPacket(player, new SM_NPC_INFO(survivor, player));
 							survivor.getAi2().onCreatureEvent(AIEventType.FOLLOW_ME, player);
 							player.getController().addTask(TaskId.QUEST_FOLLOW, QuestTasks.newFollowingToTargetCheckTask(env, survivor, 204828));
-							return defaultCloseDialog(env, 0, 1); // 1
+							return defaultCloseDialog(env, 0, 1);
 						}
 						default:
 							break;
@@ -98,7 +85,7 @@ public class _2634TheDraupnirRedemption extends QuestHandler {
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 204828) {
+			if (targetId == 204828) { // Ripley
 				if (env.getDialog() == DialogAction.QUEST_SELECT) {
 					return sendQuestDialog(env, 10002);
 				} else {
@@ -111,7 +98,7 @@ public class _2634TheDraupnirRedemption extends QuestHandler {
 
 	@Override
 	public boolean onNpcReachTargetEvent(QuestEnv env) {
-		return defaultFollowEndEvent(env, 1, 2, true); // reward
+		return defaultFollowEndEvent(env, 1, 2, true);
 	}
 
 	@Override

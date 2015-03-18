@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.beluslan;
+package quest.Beluslan;
 
 import com.aionemu.gameserver.model.DialogAction;
 import com.aionemu.gameserver.model.gameobjects.Item;
@@ -28,22 +20,13 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
-/**
- * Talk with Chieftain Akagitan (204787). Talk with Delris (204784). Find
- * Glaciont the Hardy (213730). Kill all the Ice Petrahulks: Glaciont the Hardy
- * (213730) (1), Frostfist (213788) (1), Iceback (213789) (1), Chillblow
- * (213790) (1), Snowfury (213791) (1). Talk with Chieftain Akagitan.
- *
- * @author VladimirZ
- * @reworked vlog
- */
-public class _2057GlacionttheHardy extends QuestHandler {
+public class _2057GlaciontTheHardy extends QuestHandler {
 
 	private final static int questId = 2057;
 	private final static int[] npc_ids = { 204787, 204784 };
 	private final static int[] mob_ids = { 213730, 213788, 213789, 213790, 213791 };
 
-	public _2057GlacionttheHardy() {
+	public _2057GlaciontTheHardy() {
 		super(questId);
 	}
 
@@ -51,7 +34,7 @@ public class _2057GlacionttheHardy extends QuestHandler {
 	public void register() {
 		qe.registerOnEnterZoneMissionEnd(questId);
 		qe.registerOnLevelUp(questId);
-		qe.registerQuestItem(182204316, questId); // Fire Bomb
+		qe.registerQuestItem(182204316, questId);
 		for (int mob_id : mob_ids) {
 			qe.registerQuestNpc(mob_id).addOnKillEvent(questId);
 		}
@@ -108,7 +91,7 @@ public class _2057GlacionttheHardy extends QuestHandler {
 					}
 					case SETPRO1: {
 						playQuestMovie(env, 246);
-						return defaultCloseDialog(env, 0, 1); // 1
+						return defaultCloseDialog(env, 0, 1);
 					}
 					default:
 						break;
@@ -121,7 +104,7 @@ public class _2057GlacionttheHardy extends QuestHandler {
 						}
 					case SETPRO2: {
 						playQuestMovie(env, 247);
-						return defaultCloseDialog(env, 1, 2, 182204316, 1, 0, 0); // 2
+						return defaultCloseDialog(env, 1, 2, 182204316, 1, 0, 0);
 					}
 					default:
 						break;
@@ -155,11 +138,11 @@ public class _2057GlacionttheHardy extends QuestHandler {
 					}
 					if (allDead == 4) {
 						qs.setQuestVar(var);
-						qs.setStatus(QuestStatus.REWARD); // reward
+						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
 						return true;
 					} else {
-						changeQuestStep(env, 0, 1, false, 1); // 1: 1
+						changeQuestStep(env, 0, 1, false, 1);
 						return true;
 					}
 				} else if (targetId == 213788 && var2 == 0) { // Frostfist
@@ -170,11 +153,11 @@ public class _2057GlacionttheHardy extends QuestHandler {
 					}
 					if (allDead == 4) {
 						qs.setQuestVar(var);
-						qs.setStatus(QuestStatus.REWARD); // reward
+						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
 						return true;
 					} else {
-						changeQuestStep(env, 0, 1, false, 2); // 2: 1
+						changeQuestStep(env, 0, 1, false, 2);
 						return true;
 					}
 				} else if (targetId == 213789 && var3 == 0) { // Iceback
@@ -185,11 +168,11 @@ public class _2057GlacionttheHardy extends QuestHandler {
 					}
 					if (allDead == 4) {
 						qs.setQuestVar(var);
-						qs.setStatus(QuestStatus.REWARD); // reward
+						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
 						return true;
 					} else {
-						changeQuestStep(env, 0, 1, false, 3); // 3: 1
+						changeQuestStep(env, 0, 1, false, 3);
 						return true;
 					}
 				} else if (targetId == 213790 && var4 == 0) { // Chillblow
@@ -200,11 +183,11 @@ public class _2057GlacionttheHardy extends QuestHandler {
 					}
 					if (allDead == 4) {
 						qs.setQuestVar(var);
-						qs.setStatus(QuestStatus.REWARD); // reward
+						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
 						return true;
 					} else {
-						changeQuestStep(env, 0, 1, false, 4); // 4: 1
+						changeQuestStep(env, 0, 1, false, 4);
 						return true;
 					}
 				} else if (targetId == 213791 && var5 == 0) { // Snowfury
@@ -215,11 +198,11 @@ public class _2057GlacionttheHardy extends QuestHandler {
 					}
 					if (allDead == 4) {
 						qs.setQuestVar(var);
-						qs.setStatus(QuestStatus.REWARD); // reward
+						qs.setStatus(QuestStatus.REWARD);
 						updateQuestStatus(env);
 						return true;
 					} else {
-						changeQuestStep(env, 0, 1, false, 5); // 5: 1
+						changeQuestStep(env, 0, 1, false, 5);
 						return true;
 					}
 				}
@@ -232,7 +215,7 @@ public class _2057GlacionttheHardy extends QuestHandler {
 	public HandlerResult onItemUseEvent(QuestEnv env, Item item) {
 		Player player = env.getPlayer();
 		if (player.isInsideZone(ZoneName.get("DF3_ITEMUSEAREA_Q2057"))) {
-			return HandlerResult.fromBoolean(useQuestItem(env, item, 2, 3, false, 248)); // 3
+			return HandlerResult.fromBoolean(useQuestItem(env, item, 2, 3, false, 248));
 		}
 		return HandlerResult.FAILED;
 	}

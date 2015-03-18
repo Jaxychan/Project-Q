@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.beluslan;
+package quest.Beluslan;
 
 import com.aionemu.gameserver.model.DialogAction;
 import com.aionemu.gameserver.model.gameobjects.Creature;
@@ -29,15 +21,12 @@ import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 import com.aionemu.gameserver.world.zone.ZoneName;
 
-/**
- * @author Hellboy aion4Free
- */
-public class _2061SuppressingtheBakarmaLegion extends QuestHandler {
+public class _2061SuppressingTheBakarmaLegion extends QuestHandler {
 
 	private final static int questId = 2061;
 	private final static int[] npc_ids = { 204702, 278001, 204807, 700295, 204052 };
 
-	public _2061SuppressingtheBakarmaLegion() {
+	public _2061SuppressingTheBakarmaLegion() {
 		super(questId);
 	}
 
@@ -78,13 +67,13 @@ public class _2061SuppressingtheBakarmaLegion extends QuestHandler {
 			targetId = ((Npc) env.getVisibleObject()).getNpcId();
 		}
 		switch (targetId) {
-			case 700290:
+			case 700290: // Field Suppressor
 				if (qs.getQuestVarById(0) >= 5 && qs.getQuestVarById(0) < 8) {
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
 				}
 				break;
-			case 214026:
+			case 214026: // Deputy Brigade General Yavant
 				if (qs.getQuestVarById(0) == 8) {
 					qs.setQuestVarById(0, qs.getQuestVarById(0) + 1);
 					updateQuestStatus(env);
@@ -109,7 +98,7 @@ public class _2061SuppressingtheBakarmaLegion extends QuestHandler {
 		}
 
 		if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 204052) {
+			if (targetId == 204052) { // Vidar
 				if (env.getDialog() == DialogAction.USE_OBJECT) {
 					return sendQuestDialog(env, 10002);
 				} else {
@@ -120,7 +109,7 @@ public class _2061SuppressingtheBakarmaLegion extends QuestHandler {
 		} else if (qs.getStatus() != QuestStatus.START) {
 			return false;
 		}
-		if (targetId == 204702) {
+		if (targetId == 204702) { // Nerita
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 0) {
@@ -157,7 +146,7 @@ public class _2061SuppressingtheBakarmaLegion extends QuestHandler {
 				default:
 					break;
 			}
-		} else if (targetId == 278001) {
+		} else if (targetId == 278001) { // Votan
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 1) {
@@ -176,7 +165,7 @@ public class _2061SuppressingtheBakarmaLegion extends QuestHandler {
 				default:
 					break;
 			}
-		} else if (targetId == 204807) {
+		} else if (targetId == 204807) { // Fafner
 			switch (env.getDialog()) {
 				case QUEST_SELECT:
 					if (var == 3) {
@@ -192,7 +181,7 @@ public class _2061SuppressingtheBakarmaLegion extends QuestHandler {
 				default:
 					break;
 			}
-		} else if (targetId == 700295 && var >= 4 && var < 8) {
+		} else if (targetId == 700295 && var >= 4 && var < 8) { // Balaur Aether-consuming Stone
 			if (env.getDialog() == DialogAction.USE_OBJECT) {
 				if (var == 7) {
 					removeQuestItem(env, 182204320, 1);
