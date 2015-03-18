@@ -23,12 +23,12 @@ import com.aionemu.gameserver.questEngine.task.QuestTasks;
 import com.aionemu.gameserver.services.QuestService;
 import com.aionemu.gameserver.utils.PacketSendUtility;
 
-public class _2634TheDraupnirRedemption extends QuestHandler {
+public class _2634TheDraupnirRescue extends QuestHandler {
 
 	private final static int questId = 2634;
 	private final static int[] npcs = { 204828, 700350, 204830 };
 
-	public _2634TheDraupnirRedemption() {
+	public _2634TheDraupnirRescue() {
 		super(questId);
 	}
 
