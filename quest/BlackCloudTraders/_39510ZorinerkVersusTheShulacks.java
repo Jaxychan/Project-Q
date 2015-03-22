@@ -1,21 +1,13 @@
 /**
- * This file is part of Aion-Lightning <aion-lightning.org>.
+ *  Project Q is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
  *
- *  Aion-Lightning is free software: you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation, either version 3 of the License, or
- *  (at your option) any later version.
- *
- *  Aion-Lightning is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details. *
- *  You should have received a copy of the GNU General Public License
- *  along with Aion-Lightning.
- *  If not, see <http://www.gnu.org/licenses/>.
+ *  Project Q is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with Project Q. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package quest.black_cloud_traders;
+package quest.BlackCloudTraders;
 
 import com.aionemu.commons.utils.Rnd;
 import com.aionemu.gameserver.model.DialogAction;
@@ -27,23 +19,19 @@ import com.aionemu.gameserver.questEngine.model.QuestState;
 import com.aionemu.gameserver.questEngine.model.QuestStatus;
 import com.aionemu.gameserver.services.QuestService;
 
-/**
- * @author Cheatkiller
- *
- */
-public class _39515UntruthUpset extends QuestHandler {
+public class _39510ZorinerkVersusTheShulacks extends QuestHandler {
 
-	private final static int questId = 39515;
-	private int[] mobs = { 218307, 218309, 218311, 218313, 218315 };
+	private final static int questId = 39510;
+	private int[] mobs = { 218053, 218055, 218057 };
 
-	public _39515UntruthUpset() {
+	public _39510ZorinerkVersusTheShulacks() {
 		super(questId);
 	}
 
 	@Override
 	public void register() {
-		qe.registerQuestNpc(205884).addOnTalkEvent(questId);
-		qe.registerQuestNpc(701154).addOnTalkEvent(questId);
+		qe.registerQuestNpc(205629).addOnTalkEvent(questId);
+		qe.registerQuestNpc(205983).addOnTalkEvent(questId);
 		for (int mob : mobs) {
 			qe.registerQuestNpc(mob).addOnKillEvent(questId);
 		}
@@ -71,7 +59,7 @@ public class _39515UntruthUpset extends QuestHandler {
 		}
 
 		if (qs.getStatus() == QuestStatus.START) {
-			if (targetId == 701154) {
+			if (targetId == 205983) { // Black Cloud Merchant Vanguard
 				switch (dialog) {
 					case USE_OBJECT: {
 						return sendQuestDialog(env, 1352);
@@ -87,7 +75,7 @@ public class _39515UntruthUpset extends QuestHandler {
 					default:
 						break;
 				}
-			} else if (targetId == 205884) {
+			} else if (targetId == 205629) { // Muarinerk
 				switch (dialog) {
 					case USE_OBJECT: {
 						return sendQuestDialog(env, 2375);
@@ -101,7 +89,7 @@ public class _39515UntruthUpset extends QuestHandler {
 				}
 			}
 		} else if (qs.getStatus() == QuestStatus.REWARD) {
-			if (targetId == 205884) {
+			if (targetId == 205629) { // Muarinerk
 				if (dialog == DialogAction.USE_OBJECT) {
 					return sendQuestDialog(env, 2375);
 				} else {
@@ -120,7 +108,7 @@ public class _39515UntruthUpset extends QuestHandler {
 			if (Rnd.get(1, 100) < 20) {
 				Npc npc = (Npc) env.getVisibleObject();
 				npc.getController().onDelete();
-				QuestService.addNewSpawn(npc.getWorldId(), npc.getInstanceId(), 701154, npc.getX(), npc.getY(), npc.getZ(), (byte) 0);
+				QuestService.addNewSpawn(npc.getWorldId(), npc.getInstanceId(), 205983, npc.getX(), npc.getY(), npc.getZ(), (byte) 0);
 				return true;
 			}
 		}
