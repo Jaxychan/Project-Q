@@ -2,14 +2,14 @@
 <quest_scripts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="quest_script_data.xsd">
     <!--
             [BEGIN] SUMMARY
-                    45502 [XML] Romp in Reshanta
-                    45503 [XML] Clash in the Canyon
-                    45504 [XML] Grapple in Gelkmaros
-                    45505 [XML] Crush the Cowards
-                    45506 [XML] Purge the Perpetrators
+                    45502 [XML] [Daily] Romp in Reshanta
+                    45503 [XML] [Weekly] Clash in the Canyon
+                    45504 [XML] [Daily] Grapple in Gelkmaros
+                    45505 [XML] [Spy/Daily] Crush the Cowards
+                    45506 [XML] [Weekly] Purge the Perpetrators
                     45507 [XML] [Spy/Weekly] Elysea Infiltration
-                    45508 [XML] Elyos Extermination Operation
-                    45509 [XML] Slaughter the Elyos
+                    45508 [XML] [Daily] Elyos Extermination Operation
+                    45509 [XML] [Daily] Slaughter the Elyos
                     48001 [SCRIPT] Call of the Crusade
                     48004 [XML] Message from the Blood Crusade
             [END] SUMMARY
